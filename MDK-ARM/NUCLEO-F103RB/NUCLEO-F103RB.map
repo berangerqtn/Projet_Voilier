@@ -1,0 +1,154 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.SystemClock_Config) refers to stm32f1xx_ll_utils.o(i.LL_Init1msTick) for LL_Init1msTick
+    main.o(i.SystemClock_Config) refers to stm32f1xx_ll_utils.o(i.LL_SetSystemCoreClock) for LL_SetSystemCoreClock
+    main.o(i.main) refers to main.o(i.SystemClock_Config) for SystemClock_Config
+    main.o(i.main) refers to usart.o(i.usart_conf) for usart_conf
+    main.o(i.main) refers to chrono.o(i.Chrono_Conf) for Chrono_Conf
+    main.o(i.main) refers to chrono.o(i.Chrono_Background) for Chrono_Background
+    chrono.o(i.Chrono_Background) refers to chrono.o(i.message_creator) for message_creator
+    chrono.o(i.Chrono_Background) refers to usart.o(i.send_usart) for send_usart
+    chrono.o(i.Chrono_Background) refers to chrono.o(i.LL_GPIO_IsInputPinSet) for LL_GPIO_IsInputPinSet
+    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Start) for Chrono_Start
+    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Stop) for Chrono_Stop
+    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Reset) for Chrono_Reset
+    chrono.o(i.Chrono_Background) refers to chrono.o(.data) for etat
+    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_Conf) for MyTimer_Conf
+    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_IT_Conf) for MyTimer_IT_Conf
+    chrono.o(i.Chrono_Conf) refers to chrono.o(i.Chrono_conf_IO) for Chrono_conf_IO
+    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_IT_Enable) for MyTimer_IT_Enable
+    chrono.o(i.Chrono_Conf) refers to chrono.o(.data) for Chrono_Time
+    chrono.o(i.Chrono_Conf) refers to chrono.o(i.Chrono_Task_10ms) for Chrono_Task_10ms
+    chrono.o(i.Chrono_Read) refers to chrono.o(.data) for Chrono_Time
+    chrono.o(i.Chrono_Reset) refers to mytimer.o(i.MyTimer_Stop) for MyTimer_Stop
+    chrono.o(i.Chrono_Reset) refers to chrono.o(.data) for Chrono_Timer
+    chrono.o(i.Chrono_Start) refers to mytimer.o(i.MyTimer_Start) for MyTimer_Start
+    chrono.o(i.Chrono_Start) refers to chrono.o(.data) for Chrono_Timer
+    chrono.o(i.Chrono_Stop) refers to mytimer.o(i.MyTimer_Stop) for MyTimer_Stop
+    chrono.o(i.Chrono_Stop) refers to chrono.o(.data) for Chrono_Timer
+    chrono.o(i.Chrono_Task_10ms) refers to chrono.o(.data) for Chrono_Time
+    chrono.o(i.Chrono_Task_10ms) refers to main.o(.data) for tosend
+    chrono.o(i.Chrono_conf_IO) refers to chrono.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    chrono.o(i.message_creator) refers to chrono.o(.data) for Chrono_Time
+    usart.o(i.usart_conf) refers to usart.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    usart.o(i.usart_conf) refers to stm32f1xx_ll_usart.o(i.LL_USART_Init) for LL_USART_Init
+    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    mytimer.o(i.MyTimer_Conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
+    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_TIM_DisableCounter) for LL_TIM_DisableCounter
+    mytimer.o(i.MyTimer_IT_Conf) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
+    mytimer.o(i.MyTimer_IT_Conf) refers to mytimer.o(.data) for Ptr_ItFct_TIM1
+    mytimer.o(i.MyTimer_IT_Disable) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
+    mytimer.o(i.MyTimer_Stop) refers to mytimer.o(i.LL_TIM_DisableCounter) for LL_TIM_DisableCounter
+    mytimer.o(i.TIM1_UP_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
+    mytimer.o(i.TIM1_UP_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM1
+    mytimer.o(i.TIM2_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
+    mytimer.o(i.TIM2_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM2
+    mytimer.o(i.TIM3_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
+    mytimer.o(i.TIM3_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM3
+    mytimer.o(i.TIM4_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
+    mytimer.o(i.TIM4_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM4
+    stm32f1xx_ll_rcc.o(i.LL_RCC_DeInit) refers to stm32f1xx_ll_rcc.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetSystemClockFreq) for RCC_GetSystemClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetHCLKClockFreq) for RCC_GetHCLKClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) for RCC_GetPCLK2ClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetSystemClockFreq) for RCC_GetSystemClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetHCLKClockFreq) for RCC_GetHCLKClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetPCLK1ClockFreq) for RCC_GetPCLK1ClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) for RCC_GetPCLK2ClockFreq
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq) refers to stm32f1xx_ll_rcc.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f1xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_SYS) for RCC_PLL_GetFreqDomain_SYS
+    stm32f1xx_ll_rcc.o(i.RCC_GetHCLKClockFreq) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
+    stm32f1xx_ll_rcc.o(i.RCC_GetPCLK1ClockFreq) refers to system_stm32f1xx.o(.constdata) for APBPrescTable
+    stm32f1xx_ll_rcc.o(i.RCC_GetPCLK2ClockFreq) refers to system_stm32f1xx.o(.constdata) for APBPrescTable
+    stm32f1xx_ll_rcc.o(i.RCC_GetSystemClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_PLL_GetFreqDomain_SYS) for RCC_PLL_GetFreqDomain_SYS
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f1xx_ll_utils.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f1xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f1xx_ll_utils.o(i.LL_RCC_HSE_IsReady) for LL_RCC_HSE_IsReady
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f1xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE) refers to stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f1xx_ll_utils.o(i.UTILS_PLL_IsBusy) for UTILS_PLL_IsBusy
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f1xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency) for UTILS_GetPLLOutputFrequency
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f1xx_ll_utils.o(i.LL_RCC_HSI_IsReady) for LL_RCC_HSI_IsReady
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f1xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS) for LL_RCC_PLL_ConfigDomain_SYS
+    stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI) refers to stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) for UTILS_EnablePLLAndSwitchSystem
+    stm32f1xx_ll_utils.o(i.LL_SetSystemCoreClock) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f1xx_ll_utils.o(i.UTILS_SetFlashLatency) for UTILS_SetFlashLatency
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f1xx_ll_utils.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to stm32f1xx_ll_utils.o(i.LL_SetSystemCoreClock) for LL_SetSystemCoreClock
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
+    stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_utils.o(i.UTILS_PLL_IsBusy) refers to stm32f1xx_ll_utils.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
+    stm32f1xx_ll_tim.o(i.IC1Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.IC2Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.IC3Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.IC4Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_BDTR_Init) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_DeInit) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_DeInit) refers to stm32f1xx_ll_tim.o(i.LL_APB1_GRP1_ForceReset) for LL_APB1_GRP1_ForceReset
+    stm32f1xx_ll_tim.o(i.LL_TIM_DeInit) refers to stm32f1xx_ll_tim.o(i.LL_APB1_GRP1_ReleaseReset) for LL_APB1_GRP1_ReleaseReset
+    stm32f1xx_ll_tim.o(i.LL_TIM_ENCODER_Init) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_HALLSENSOR_Init) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_HALLSENSOR_Init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
+    stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) refers to stm32f1xx_ll_tim.o(i.IC1Config) for IC1Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) refers to stm32f1xx_ll_tim.o(i.IC2Config) for IC2Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) refers to stm32f1xx_ll_tim.o(i.IC3Config) for IC3Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) refers to stm32f1xx_ll_tim.o(i.IC4Config) for IC4Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_Init) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) refers to stm32f1xx_ll_tim.o(i.OC1Config) for OC1Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) refers to stm32f1xx_ll_tim.o(i.OC2Config) for OC2Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) refers to stm32f1xx_ll_tim.o(i.OC3Config) for OC3Config
+    stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) refers to stm32f1xx_ll_tim.o(i.OC4Config) for OC4Config
+    stm32f1xx_ll_tim.o(i.OC1Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.OC2Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.OC2Config) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_SetCompareCH2) for LL_TIM_OC_SetCompareCH2
+    stm32f1xx_ll_tim.o(i.OC3Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_tim.o(i.OC4Config) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_usart.o(i.LL_USART_ClockInit) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_usart.o(i.LL_USART_ClockInit) refers to stm32f1xx_ll_usart.o(i.LL_USART_IsEnabled) for LL_USART_IsEnabled
+    stm32f1xx_ll_usart.o(i.LL_USART_DeInit) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_usart.o(i.LL_USART_DeInit) refers to stm32f1xx_ll_usart.o(i.LL_APB1_GRP1_ForceReset) for LL_APB1_GRP1_ForceReset
+    stm32f1xx_ll_usart.o(i.LL_USART_DeInit) refers to stm32f1xx_ll_usart.o(i.LL_APB1_GRP1_ReleaseReset) for LL_APB1_GRP1_ReleaseReset
+    stm32f1xx_ll_usart.o(i.LL_USART_Init) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_usart.o(i.LL_USART_Init) refers to stm32f1xx_ll_usart.o(i.LL_USART_IsEnabled) for LL_USART_IsEnabled
+    stm32f1xx_ll_usart.o(i.LL_USART_Init) refers to stm32f1xx_ll_rcc.o(i.LL_RCC_GetSystemClocksFreq) for LL_RCC_GetSystemClocksFreq
+    stm32f1xx_ll_usart.o(i.LL_USART_Init) refers to stm32f1xx_ll_usart.o(i.LL_USART_SetBaudRate) for LL_USART_SetBaudRate
+    stm32f1xx_ll_gpio.o(i.LL_GPIO_DeInit) refers to main.o(i.assert_failed) for assert_failed
+    stm32f1xx_ll_gpio.o(i.LL_GPIO_DeInit) refers to stm32f1xx_ll_gpio.o(i.LL_APB2_GRP1_ForceReset) for LL_APB2_GRP1_ForceReset
+    stm32f1xx_ll_gpio.o(i.LL_GPIO_DeInit) refers to stm32f1xx_ll_gpio.o(i.LL_APB2_GRP1_ReleaseReset) for LL_APB2_GRP1_ReleaseReset
+    stm32f1xx_ll_gpio.o(i.LL_GPIO_Init) refers to main.o(i.assert_failed) for assert_failed
+    system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
+    startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(.text) for Reset_Handler
+    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM1_UP_IRQHandler) for TIM1_UP_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM2_IRQHandler) for TIM2_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM3_IRQHandler) for TIM3_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM4_IRQHandler) for TIM4_IRQHandler
+    startup_stm32f103xb.o(.text) refers to system_stm32f1xx.o(i.SystemInit) for SystemInit
+    startup_stm32f103xb.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
