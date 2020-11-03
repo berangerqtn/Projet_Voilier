@@ -1,4 +1,4 @@
-============= Génération de ce projet, T.Rocacher ===========================================
+============= Génération de ce projet, Léa Laxague, Florain Convert, Baptiste Lerat, Béranger Quintana ===========================================
 Le projet est basé sur CubeF1/STM32Cube_FW_F1_V1.8.0/Projects/STM32F103RB-Nucleo/Templates_LL
 La seconde partie de ce readme est l'original qu'on peut trouver dans /Templates_LL
 
