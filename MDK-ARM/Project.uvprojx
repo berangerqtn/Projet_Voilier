@@ -393,9 +393,19 @@
           <GroupName>User Services</GroupName>
           <Files>
             <File>
-              <FileName>Chrono.c</FileName>
+              <FileName>bordage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Services\Chrono.c</FilePath>
+              <FilePath>..\Services\bordage.c</FilePath>
+            </File>
+            <File>
+              <FileName>affichage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\affichage.c</FilePath>
+            </File>
+            <File>
+              <FileName>orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\orientation.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -403,14 +413,29 @@
           <GroupName>MyDrivers</GroupName>
           <Files>
             <File>
-              <FileName>usart.c</FileName>
+              <FileName>girouette.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyDrivers\usart.c</FilePath>
+              <FilePath>..\MyDrivers\girouette.c</FilePath>
             </File>
             <File>
-              <FileName>MyTimer.c</FileName>
+              <FileName>telecommande_RF.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyDrivers\MyTimer.c</FilePath>
+              <FilePath>..\MyDrivers\telecommande_RF.c</FilePath>
+            </File>
+            <File>
+              <FileName>voiles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\voiles.c</FilePath>
+            </File>
+            <File>
+              <FileName>roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\roulis.c</FilePath>
+            </File>
+            <File>
+              <FileName>cap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\cap.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -866,9 +891,19 @@
           <GroupName>User Services</GroupName>
           <Files>
             <File>
-              <FileName>Chrono.c</FileName>
+              <FileName>bordage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Services\Chrono.c</FilePath>
+              <FilePath>..\Services\bordage.c</FilePath>
+            </File>
+            <File>
+              <FileName>affichage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\affichage.c</FilePath>
+            </File>
+            <File>
+              <FileName>orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\orientation.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -876,14 +911,29 @@
           <GroupName>MyDrivers</GroupName>
           <Files>
             <File>
-              <FileName>usart.c</FileName>
+              <FileName>girouette.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyDrivers\usart.c</FilePath>
+              <FilePath>..\MyDrivers\girouette.c</FilePath>
             </File>
             <File>
-              <FileName>MyTimer.c</FileName>
+              <FileName>telecommande_RF.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MyDrivers\MyTimer.c</FilePath>
+              <FilePath>..\MyDrivers\telecommande_RF.c</FilePath>
+            </File>
+            <File>
+              <FileName>voiles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\voiles.c</FilePath>
+            </File>
+            <File>
+              <FileName>roulis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\roulis.c</FilePath>
+            </File>
+            <File>
+              <FileName>cap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\cap.c</FilePath>
             </File>
           </Files>
         </Group>
