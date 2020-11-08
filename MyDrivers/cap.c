@@ -9,3 +9,13 @@
 //               Fichier de driver du plateau.
 
 #include "cap.h"
+
+int cap_init (int pwm)
+{
+    break;
+}
+
+int cap_sendpwm(int pwm)
+{
+    break;
+}

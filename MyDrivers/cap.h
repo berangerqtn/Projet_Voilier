@@ -5,6 +5,9 @@
 
 
 
+int cap_init (int pwm);
+int cap_sendpwm(int pwm); 
+
 
 
 
