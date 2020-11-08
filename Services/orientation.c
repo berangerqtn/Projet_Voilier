@@ -8,6 +8,6 @@
  
 //               Fichier d'orientation du plateau.
 
-
+#include "orientation.h"
 #include "cap.c"
 #include "telecommande_RF.c"
