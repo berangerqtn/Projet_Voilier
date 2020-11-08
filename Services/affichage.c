@@ -2,7 +2,7 @@
 //                         PROJET PERIPH
 //_______________________________________________________________
 
-// LAXAGUE Léa CONVERT Florian LERAT Baptiste QUINTANA Béranger
+// LAXAGUE LÃ©a CONVERT Florian LERAT Baptiste QUINTANA BÃ©ranger
 
 //_______________________COUCHES SERVICES________________________
 
