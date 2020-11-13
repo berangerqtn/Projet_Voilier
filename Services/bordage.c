@@ -8,6 +8,29 @@
 
 //   Fichier de programmation du bordage et de l'antichavirement
 
-#include "girouette.c"
-#include "voiles.c"
-#include "roulis.c"
+#include "bordage.h"
+#include "girouette.h"
+#include "voiles.h"
+#include "roulis.h"
+#include "stm32f1xx_ll_gpio.h"
+#include "stm32f1xx_ll_bus.h"
+
+
+void bordage_conf_IO(void){
+	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);
+	
+	//Configuration du Pin6 (arrivée ChannelA capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_FLOATING);
+	
+	//Configuration du Pin7 (arrivée ChannelB capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_FLOATING);
+	
+	//Configuration du Pin5 (arrivée Index capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
+	
+	//A TERMINER !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
+}

@@ -1,10 +1,17 @@
 #ifndef GIROUETTE_H
 #define GIROUETTE_H
 
-
+#include "stm32f1xx_ll_system.h" 
+#include "stm32f1xx_ll_utils.h"
+#include "stm32f1xx_ll_rcc.h"
+#include "stm32f103xb.h" 
 #include "stm32f1xx_ll_gpio.h"
+#include "stm32f1xx_ll_tim.h"
+#include "stm32f1xx_ll_bus.h"
 
-int girouette_init();
-int girouette_get_alpha();
+
+//Configuation du timer, en mode codeur incrémental
+void Timer_Conf(int Arr, int Psc);
+
 
 #endif
