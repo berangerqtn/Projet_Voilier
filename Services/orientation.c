@@ -11,3 +11,6 @@
 #include "orientation.h"
 #include "cap.c"
 #include "telecommande_RF.c"
+
+telecommandeRF_init();
+telecommandeRF_getpwm();
