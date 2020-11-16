@@ -31,6 +31,8 @@ void bordage_conf_IO(void){
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
 	
+	//Config du PinX (sortie STM32 en PWM)
+	
 	//A TERMINER !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
 }

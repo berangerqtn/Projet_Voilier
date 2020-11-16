@@ -16,9 +16,16 @@ int voiles_init()
 
 }
 
-int voiles_alpha_to_teta(int alpha)
-{
-
+float voiles_alpha_to_teta(int alpha){
+	float teta;
+	
+	if (alpha>0 && alpha<45){
+		teta =0.0;
+	}
+	else if (alpha>45 && alpha<180){
+		teta= (2/3)*alpha;
+	}
+	return teta;
 }
 
 int voiles_teta_to_ms(int teta)

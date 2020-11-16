@@ -13,5 +13,8 @@
 //Configuation du timer, en mode codeur incrémental
 void Timer_Conf(int Arr, int Psc);
 
+//Récupération de l'angle alpha de la girouette
+int get_alpha(TIM_TypeDef *Timer);
+
 
 #endif
