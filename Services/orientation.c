@@ -12,5 +12,13 @@
 #include "cap.c"
 #include "telecommande_RF.c"
 
-telecommandeRF_init();
-telecommandeRF_getpwm();
+
+int orientation()
+{
+	int sens; 
+	
+	telecommandeRF_init();
+	telecommandeRF_getpwm();
+	
+	
+}

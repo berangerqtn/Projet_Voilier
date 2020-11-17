@@ -6,7 +6,7 @@
 #include "stm32f1xx_ll_gpio.h"
 
 int telecommandeRF_init();
-int telecommandeRF_getpwm(int*DutyCycle, int*Period);
+int telecommandeRF_getpwm();
 
 
 
