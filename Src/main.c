@@ -20,6 +20,11 @@
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
 
+#include "bordage.h"
+#include "girouette.h"
+#include "voiles.h"
+#include "roulis.h"
+
 
 void  SystemClock_Config(void);
 
@@ -31,26 +36,24 @@ void  SystemClock_Config(void);
   * @retval None
   */
 	
-
+	
+	
 int main(void)
 {
+
+	
   /* Configure the system clock to 72 MHz */
   SystemClock_Config();
 
   /* Add your application code here */
-  // Configuration chronomètre
-	//usart_conf(USART2,9600,LL_USART_DATAWIDTH_9B);
-	//Chrono_Conf(TIM3);
+  // Configuration bordage
+	bordage_conf_IO();
 	
-	// Lancement chronomètre
-	//Chrono_Start(); 
-	
-
   
   /* Infinite loop */
   while (1)
   {
-		
+		Bordage_Background();
   }
 }
 

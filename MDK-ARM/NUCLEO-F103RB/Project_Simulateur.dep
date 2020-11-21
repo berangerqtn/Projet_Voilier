@@ -1,6 +1,6 @@
 Dependencies for Project 'Project', Target 'Simulateur': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (../Src/main.c)(0x5FB2C2A3)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\main.o --omf_browse nucleo-f103rb\main.crf --depend nucleo-f103rb\main.d)
+F (../Src/main.c)(0x5FB94002)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\main.o --omf_browse nucleo-f103rb\main.crf --depend nucleo-f103rb\main.d)
 I (..\LLDrivers\inc\stm32f1xx_ll_rcc.h)(0x5FA11F25)
 I (..\Inc\stm32f1xx.h)(0x5FA11F25)
 I (..\Inc\stm32f103xb.h)(0x5FA11F25)
@@ -12,8 +12,15 @@ I (C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cms
 I (..\Inc\system_stm32f1xx.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_utils.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_system.h)(0x5FA11F25)
-F (..\Services\bordage.c)(0x5FAE6C42)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\bordage.o --omf_browse nucleo-f103rb\bordage.crf --depend nucleo-f103rb\bordage.d)
-I (..\Services\bordage.h)(0x5FAE6C54)
+I (..\Services\bordage.h)(0x5FB93FF8)
+I (..\LLDrivers\inc\stm32f1xx_ll_gpio.h)(0x5FA11F25)
+I (..\LLDrivers\inc\stm32f1xx_ll_tim.h)(0x5FA11F25)
+I (..\LLDrivers\inc\stm32f1xx_ll_bus.h)(0x5FA11F25)
+I (..\MyDrivers\girouette.h)(0x5FB93657)
+I (..\MyDrivers\voiles.h)(0x5FB93657)
+I (..\MyDrivers\roulis.h)(0x5FB936A7)
+F (..\Services\bordage.c)(0x5FB94578)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\bordage.o --omf_browse nucleo-f103rb\bordage.crf --depend nucleo-f103rb\bordage.d)
+I (..\Services\bordage.h)(0x5FB93FF8)
 I (..\Inc\stm32f103xb.h)(0x5FA11F25)
 I (C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D25F326)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
@@ -25,18 +32,18 @@ I (..\LLDrivers\inc\stm32f1xx_ll_gpio.h)(0x5FA11F25)
 I (..\Inc\stm32f1xx.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_tim.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_bus.h)(0x5FA11F25)
-I (..\MyDrivers\girouette.h)(0x5FB2BBB9)
+I (..\MyDrivers\girouette.h)(0x5FB93657)
 I (..\LLDrivers\inc\stm32f1xx_ll_system.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_utils.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_rcc.h)(0x5FA11F25)
-I (..\MyDrivers\voiles.h)(0x5FB2C1F6)
-I (..\MyDrivers\roulis.h)(0x5FAE6B6C)
-F (..\Services\affichage.c)(0x5FAE45BD)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\affichage.o --omf_browse nucleo-f103rb\affichage.crf --depend nucleo-f103rb\affichage.d)
-F (..\Services\orientation.c)(0x5FAE45BD)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\orientation.o --omf_browse nucleo-f103rb\orientation.crf --depend nucleo-f103rb\orientation.d)
+I (..\MyDrivers\voiles.h)(0x5FB93657)
+I (..\MyDrivers\roulis.h)(0x5FB936A7)
+F (..\Services\affichage.c)(0x5FB936A7)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\affichage.o --omf_browse nucleo-f103rb\affichage.crf --depend nucleo-f103rb\affichage.d)
+F (..\Services\orientation.c)(0x5FB936A7)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\orientation.o --omf_browse nucleo-f103rb\orientation.crf --depend nucleo-f103rb\orientation.d)
 I (..\MyDrivers\cap.c)(0x5FAE45BD)
 I (..\MyDrivers\telecommande_RF.c)(0x5FAE45BD)
-F (..\MyDrivers\girouette.c)(0x5FB2BFCC)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\girouette.o --omf_browse nucleo-f103rb\girouette.crf --depend nucleo-f103rb\girouette.d)
-I (..\MyDrivers\girouette.h)(0x5FB2BBB9)
+F (..\MyDrivers\girouette.c)(0x5FB939CF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\girouette.o --omf_browse nucleo-f103rb\girouette.crf --depend nucleo-f103rb\girouette.d)
+I (..\MyDrivers\girouette.h)(0x5FB93657)
 I (..\LLDrivers\inc\stm32f1xx_ll_system.h)(0x5FA11F25)
 I (..\Inc\stm32f1xx.h)(0x5FA11F25)
 I (..\Inc\stm32f103xb.h)(0x5FA11F25)
@@ -52,8 +59,8 @@ I (..\LLDrivers\inc\stm32f1xx_ll_gpio.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_tim.h)(0x5FA11F25)
 I (..\LLDrivers\inc\stm32f1xx_ll_bus.h)(0x5FA11F25)
 F (..\MyDrivers\telecommande_RF.c)(0x5FAE45BD)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\telecommande_rf.o --omf_browse nucleo-f103rb\telecommande_rf.crf --depend nucleo-f103rb\telecommande_rf.d)
-F (..\MyDrivers\voiles.c)(0x5FB2C21C)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\voiles.o --omf_browse nucleo-f103rb\voiles.crf --depend nucleo-f103rb\voiles.d)
-I (..\MyDrivers\voiles.h)(0x5FB2C1F6)
+F (..\MyDrivers\voiles.c)(0x5FB945AF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\voiles.o --omf_browse nucleo-f103rb\voiles.crf --depend nucleo-f103rb\voiles.d)
+I (..\MyDrivers\voiles.h)(0x5FB93657)
 I (..\LLDrivers\inc\stm32f1xx_ll_gpio.h)(0x5FA11F25)
 I (..\Inc\stm32f1xx.h)(0x5FA11F25)
 I (..\Inc\stm32f103xb.h)(0x5FA11F25)
@@ -63,8 +70,11 @@ I (C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cms
 I (C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
 I (C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D25F326)
 I (..\Inc\system_stm32f1xx.h)(0x5FA11F25)
-F (..\MyDrivers\roulis.c)(0x5FAE6B6C)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\roulis.o --omf_browse nucleo-f103rb\roulis.crf --depend nucleo-f103rb\roulis.d)
-I (..\MyDrivers\roulis.h)(0x5FAE6B6C)
+I (..\LLDrivers\inc\stm32f1xx_ll_bus.h)(0x5FA11F25)
+I (..\LLDrivers\inc\stm32f1xx_ll_tim.h)(0x5FA11F25)
+I (..\LLDrivers\inc\stm32f1xx_ll_rcc.h)(0x5FA11F25)
+F (..\MyDrivers\roulis.c)(0x5FB93657)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Inc -I ..\LLDrivers\inc -I ..\Services -I ..\MyDrivers --C99-I.\RTE\_Simulateur-IC:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\leala\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F10X_MD -DSTM32F103xB -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000U" -DUSE_FULL_ASSERT-o nucleo-f103rb\roulis.o --omf_browse nucleo-f103rb\roulis.crf --depend nucleo-f103rb\roulis.d)
+I (..\MyDrivers\roulis.h)(0x5FB936A7)
 I (..\LLDrivers\inc\stm32f1xx_ll_gpio.h)(0x5FA11F25)
 I (..\Inc\stm32f1xx.h)(0x5FA11F25)
 I (..\Inc\stm32f103xb.h)(0x5FA11F25)

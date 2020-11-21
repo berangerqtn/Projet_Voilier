@@ -8,6 +8,6 @@
 
 
 void bordage_conf_IO(void);
-
+void Bordage_Background(void);
 
 #endif

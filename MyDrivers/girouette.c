@@ -14,7 +14,6 @@
 #include "stm32f1xx_ll_rcc.h"
 
 
-void (*Ptr_ItFct_TIM3)(void); 
 
 
 //Configuation du timer, en mode codeur incrémental

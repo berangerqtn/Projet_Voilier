@@ -16,6 +16,16 @@
 #include "stm32f1xx_ll_bus.h"
 
 
+int alpha;
+float teta;
+float MS;
+int Rapport_Cyclique;
+int compare_value;
+	
+	
+int (*Ptr_Compare_Value); 
+	
+
 void bordage_conf_IO(void){
 	
 	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);
@@ -36,8 +46,23 @@ void bordage_conf_IO(void){
 	
 	//Configuration du Pin8 (sortie STM32 en PWM) en output floating
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_OUTPUT);
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_FLOATING);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_ALTERNATE);
+	
+	//Réglage du timer lié à la girouette
+	Timer_Conf((180-1), 1);
+	
+	//Réglage du timer lié à la gestion des voiles
+	timer_voiles_conf((400-1),(3600-1));
 
 }
 
-//pour TIM1 à 50hz on veut Arr=1 440 000
+void Bordage_Background(void){
+		
+		//alpha=get_alpha(TIM3);
+		alpha=45;
+		teta=voiles_alpha_to_teta(alpha);
+		MS=voiles_teta_to_ms(teta);
+		Rapport_Cyclique=voiles_rapport_cyclique(MS);
+		compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
+	  Ptr_Compare_Value= &compare_value;
+}
