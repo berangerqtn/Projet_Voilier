@@ -5,10 +5,10 @@
 #include "stm32f1xx_ll_bus.h" 
 #include "stm32f1xx_ll_tim.h"
 #include "stm32f1xx_ll_gpio.h"
+#define FREQ_HORLOGE 75000000
+#define RESOLUTION FREQ_HORLOGE/938
 
-#define RESOLUTION 75000000/938 //Clock interne divisé par le PSC du tim 4
-
-int cap_init (int pwm);
-int cap_generate_pwm();
-int cap_send_to_moteur(int pulsation);
+void cap_init (int ARR, int PSC);
+void cap_generate_pwm(int pulsation, int PSC_cap);
+void cap_send_to_moteur(double pulse, int PSC_cap);
 #endif
