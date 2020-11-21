@@ -5,8 +5,10 @@
 #include "stm32f1xx_ll_bus.h" 
 #include "stm32f1xx_ll_gpio.h"
 
-int telecommandeRF_init();
-int telecommandeRF_getpwm();
+#define FREQ_HORLOGE 72000000
+
+void telecommandeRF_init(void);
+void telecommandeRF_getpwm(double *pulsation);
 
 
 

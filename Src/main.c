@@ -51,7 +51,7 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-		orientation();
+		gerer_orientation();
   }
 }
 
@@ -150,3 +150,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+

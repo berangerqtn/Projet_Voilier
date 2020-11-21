@@ -7,51 +7,81 @@ Section Cross References
     main.o(i.SystemClock_Config) refers to stm32f1xx_ll_utils.o(i.LL_Init1msTick) for LL_Init1msTick
     main.o(i.SystemClock_Config) refers to stm32f1xx_ll_utils.o(i.LL_SetSystemCoreClock) for LL_SetSystemCoreClock
     main.o(i.main) refers to main.o(i.SystemClock_Config) for SystemClock_Config
-    main.o(i.main) refers to usart.o(i.usart_conf) for usart_conf
-    main.o(i.main) refers to chrono.o(i.Chrono_Conf) for Chrono_Conf
-    main.o(i.main) refers to chrono.o(i.Chrono_Background) for Chrono_Background
-    chrono.o(i.Chrono_Background) refers to chrono.o(i.message_creator) for message_creator
-    chrono.o(i.Chrono_Background) refers to usart.o(i.send_usart) for send_usart
-    chrono.o(i.Chrono_Background) refers to chrono.o(i.LL_GPIO_IsInputPinSet) for LL_GPIO_IsInputPinSet
-    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Start) for Chrono_Start
-    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Stop) for Chrono_Stop
-    chrono.o(i.Chrono_Background) refers to chrono.o(i.Chrono_Reset) for Chrono_Reset
-    chrono.o(i.Chrono_Background) refers to chrono.o(.data) for etat
-    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_Conf) for MyTimer_Conf
-    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_IT_Conf) for MyTimer_IT_Conf
-    chrono.o(i.Chrono_Conf) refers to chrono.o(i.Chrono_conf_IO) for Chrono_conf_IO
-    chrono.o(i.Chrono_Conf) refers to mytimer.o(i.MyTimer_IT_Enable) for MyTimer_IT_Enable
-    chrono.o(i.Chrono_Conf) refers to chrono.o(.data) for Chrono_Time
-    chrono.o(i.Chrono_Conf) refers to chrono.o(i.Chrono_Task_10ms) for Chrono_Task_10ms
-    chrono.o(i.Chrono_Read) refers to chrono.o(.data) for Chrono_Time
-    chrono.o(i.Chrono_Reset) refers to mytimer.o(i.MyTimer_Stop) for MyTimer_Stop
-    chrono.o(i.Chrono_Reset) refers to chrono.o(.data) for Chrono_Timer
-    chrono.o(i.Chrono_Start) refers to mytimer.o(i.MyTimer_Start) for MyTimer_Start
-    chrono.o(i.Chrono_Start) refers to chrono.o(.data) for Chrono_Timer
-    chrono.o(i.Chrono_Stop) refers to mytimer.o(i.MyTimer_Stop) for MyTimer_Stop
-    chrono.o(i.Chrono_Stop) refers to chrono.o(.data) for Chrono_Timer
-    chrono.o(i.Chrono_Task_10ms) refers to chrono.o(.data) for Chrono_Time
-    chrono.o(i.Chrono_Task_10ms) refers to main.o(.data) for tosend
-    chrono.o(i.Chrono_conf_IO) refers to chrono.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    chrono.o(i.message_creator) refers to chrono.o(.data) for Chrono_Time
-    usart.o(i.usart_conf) refers to usart.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
-    usart.o(i.usart_conf) refers to stm32f1xx_ll_usart.o(i.LL_USART_Init) for LL_USART_Init
-    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
-    mytimer.o(i.MyTimer_Conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
-    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
-    mytimer.o(i.MyTimer_Conf) refers to mytimer.o(i.LL_TIM_DisableCounter) for LL_TIM_DisableCounter
-    mytimer.o(i.MyTimer_IT_Conf) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
-    mytimer.o(i.MyTimer_IT_Conf) refers to mytimer.o(.data) for Ptr_ItFct_TIM1
-    mytimer.o(i.MyTimer_IT_Disable) refers to mytimer.o(i.LL_TIM_DisableIT_UPDATE) for LL_TIM_DisableIT_UPDATE
-    mytimer.o(i.MyTimer_Stop) refers to mytimer.o(i.LL_TIM_DisableCounter) for LL_TIM_DisableCounter
-    mytimer.o(i.TIM1_UP_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
-    mytimer.o(i.TIM1_UP_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM1
-    mytimer.o(i.TIM2_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
-    mytimer.o(i.TIM2_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM2
-    mytimer.o(i.TIM3_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
-    mytimer.o(i.TIM3_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM3
-    mytimer.o(i.TIM4_IRQHandler) refers to mytimer.o(i.LL_TIM_ClearFlag_UPDATE) for LL_TIM_ClearFlag_UPDATE
-    mytimer.o(i.TIM4_IRQHandler) refers to mytimer.o(.data) for Ptr_ItFct_TIM4
+    main.o(i.main) refers to orientation.o(i.gerer_orientation) for gerer_orientation
+    orientation.o(i.LL_TIM_IC_SetPolarity) refers to orientation.o(.constdata) for SHIFT_TAB_CCxP
+    orientation.o(i.LL_TIM_OC_EnablePreload) refers to orientation.o(.constdata) for OFFSET_TAB_CCMRx
+    orientation.o(i.LL_TIM_OC_SetMode) refers to orientation.o(.constdata) for OFFSET_TAB_CCMRx
+    orientation.o(i.cap_generate_pwm) refers to dmul.o(.text) for __aeabi_dmul
+    orientation.o(i.cap_generate_pwm) refers to dfixui.o(.text) for __aeabi_d2uiz
+    orientation.o(i.cap_init) refers to orientation.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    orientation.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_StructInit) for LL_TIM_StructInit
+    orientation.o(i.cap_init) refers to dfixui.o(.text) for __aeabi_d2uiz
+    orientation.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    orientation.o(i.cap_init) refers to stm32f1xx_ll_gpio.o(i.LL_GPIO_StructInit) for LL_GPIO_StructInit
+    orientation.o(i.cap_init) refers to orientation.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    orientation.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_StructInit) for LL_TIM_OC_StructInit
+    orientation.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) for LL_TIM_OC_Init
+    orientation.o(i.cap_init) refers to orientation.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
+    orientation.o(i.cap_init) refers to orientation.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
+    orientation.o(i.cap_init) refers to orientation.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    orientation.o(i.cap_send_to_moteur) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    orientation.o(i.cap_send_to_moteur) refers to dadd.o(.text) for __aeabi_drsub
+    orientation.o(i.cap_send_to_moteur) refers to orientation.o(i.cap_generate_pwm) for cap_generate_pwm
+    orientation.o(i.cap_send_to_moteur) refers to cap.o(i.cap_generate_pwm) for cap_generate_pwm
+    orientation.o(i.cap_send_to_moteur) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    orientation.o(i.cap_send_to_moteur) refers to orientation.o(i.LL_GPIO_ResetOutputPin) for LL_GPIO_ResetOutputPin
+    orientation.o(i.gerer_orientation) refers to round.o(i.round) for round
+    orientation.o(i.gerer_orientation) refers to dmul.o(.text) for __aeabi_dmul
+    orientation.o(i.gerer_orientation) refers to orientation.o(i.telecommandeRF_init) for telecommandeRF_init
+    orientation.o(i.gerer_orientation) refers to telecommande_rf.o(i.telecommandeRF_init) for telecommandeRF_init
+    orientation.o(i.gerer_orientation) refers to orientation.o(i.cap_init) for cap_init
+    orientation.o(i.gerer_orientation) refers to cap.o(i.cap_init) for cap_init
+    orientation.o(i.gerer_orientation) refers to orientation.o(i.cap_send_to_moteur) for cap_send_to_moteur
+    orientation.o(i.gerer_orientation) refers to cap.o(i.cap_send_to_moteur) for cap_send_to_moteur
+    orientation.o(i.telecommandeRF_getpwm) refers to dfltui.o(.text) for __aeabi_ui2d
+    orientation.o(i.telecommandeRF_getpwm) refers to ddiv.o(.text) for __aeabi_ddiv
+    orientation.o(i.telecommandeRF_getpwm) refers to dmul.o(.text) for __aeabi_dmul
+    orientation.o(i.telecommandeRF_init) refers to orientation.o(i.LL_APB1_GRP1_EnableClock) for LL_APB1_GRP1_EnableClock
+    orientation.o(i.telecommandeRF_init) refers to stm32f1xx_ll_gpio.o(i.LL_GPIO_StructInit) for LL_GPIO_StructInit
+    orientation.o(i.telecommandeRF_init) refers to orientation.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    orientation.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_StructInit) for LL_TIM_StructInit
+    orientation.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    orientation.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_IC_StructInit) for LL_TIM_IC_StructInit
+    orientation.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) for LL_TIM_IC_Init
+    orientation.o(i.telecommandeRF_init) refers to orientation.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    orientation.o(i.telecommandeRF_init) refers to orientation.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
+    orientation.o(i.telecommandeRF_init) refers to orientation.o(i.LL_TIM_EnableCounter) for LL_TIM_EnableCounter
+    telecommande_rf.o(i.LL_TIM_IC_SetPolarity) refers to telecommande_rf.o(.constdata) for SHIFT_TAB_CCxP
+    telecommande_rf.o(i.telecommandeRF_getpwm) refers to dfltui.o(.text) for __aeabi_ui2d
+    telecommande_rf.o(i.telecommandeRF_getpwm) refers to ddiv.o(.text) for __aeabi_ddiv
+    telecommande_rf.o(i.telecommandeRF_getpwm) refers to dmul.o(.text) for __aeabi_dmul
+    telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_gpio.o(i.LL_GPIO_StructInit) for LL_GPIO_StructInit
+    telecommande_rf.o(i.telecommandeRF_init) refers to telecommande_rf.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_StructInit) for LL_TIM_StructInit
+    telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_IC_StructInit) for LL_TIM_IC_StructInit
+    telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_IC_Init) for LL_TIM_IC_Init
+    telecommande_rf.o(i.telecommandeRF_init) refers to telecommande_rf.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    telecommande_rf.o(i.telecommandeRF_init) refers to telecommande_rf.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
+    cap.o(i.LL_TIM_OC_EnablePreload) refers to cap.o(.constdata) for OFFSET_TAB_CCMRx
+    cap.o(i.LL_TIM_OC_SetMode) refers to cap.o(.constdata) for OFFSET_TAB_CCMRx
+    cap.o(i.cap_generate_pwm) refers to dmul.o(.text) for __aeabi_dmul
+    cap.o(i.cap_generate_pwm) refers to dfixui.o(.text) for __aeabi_d2uiz
+    cap.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_StructInit) for LL_TIM_StructInit
+    cap.o(i.cap_init) refers to dfixui.o(.text) for __aeabi_d2uiz
+    cap.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    cap.o(i.cap_init) refers to stm32f1xx_ll_gpio.o(i.LL_GPIO_StructInit) for LL_GPIO_StructInit
+    cap.o(i.cap_init) refers to cap.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    cap.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_StructInit) for LL_TIM_OC_StructInit
+    cap.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_OC_Init) for LL_TIM_OC_Init
+    cap.o(i.cap_init) refers to cap.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
+    cap.o(i.cap_init) refers to cap.o(i.LL_TIM_OC_EnablePreload) for LL_TIM_OC_EnablePreload
+    cap.o(i.cap_send_to_moteur) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    cap.o(i.cap_send_to_moteur) refers to dadd.o(.text) for __aeabi_drsub
+    cap.o(i.cap_send_to_moteur) refers to orientation.o(i.cap_generate_pwm) for cap_generate_pwm
+    cap.o(i.cap_send_to_moteur) refers to cap.o(i.cap_generate_pwm) for cap_generate_pwm
+    cap.o(i.cap_send_to_moteur) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    cap.o(i.cap_send_to_moteur) refers to cap.o(i.LL_GPIO_ResetOutputPin) for LL_GPIO_ResetOutputPin
     stm32f1xx_ll_rcc.o(i.LL_RCC_DeInit) refers to stm32f1xx_ll_rcc.o(i.LL_RCC_PLL_IsReady) for LL_RCC_PLL_IsReady
     stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to main.o(i.assert_failed) for assert_failed
     stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq) refers to stm32f1xx_ll_rcc.o(i.RCC_GetSystemClockFreq) for RCC_GetSystemClockFreq
@@ -130,12 +160,13 @@ Section Cross References
     system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
     startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(STACK) for __initial_sp
     startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(.text) for Reset_Handler
-    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM1_UP_IRQHandler) for TIM1_UP_IRQHandler
-    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM2_IRQHandler) for TIM2_IRQHandler
-    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM3_IRQHandler) for TIM3_IRQHandler
-    startup_stm32f103xb.o(RESET) refers to mytimer.o(i.TIM4_IRQHandler) for TIM4_IRQHandler
     startup_stm32f103xb.o(.text) refers to system_stm32f1xx.o(i.SystemInit) for SystemInit
     startup_stm32f103xb.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    round.o(i.round) refers (Special) to iusefp.o(.text) for __I$use$fp
+    round.o(i.round) refers to drnd.o(.text) for _drnd
+    round.o(i.round) refers to dadd.o(.text) for __aeabi_drsub
+    round.o(i.round) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    round.o(i.round) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -143,6 +174,20 @@ Section Cross References
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f103xb.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f103xb.o(STACK) for __initial_sp
@@ -150,5 +195,10 @@ Section Cross References
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    drnd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    drnd.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    drnd.o(.text) refers to depilogue.o(.text) for _double_round
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
 

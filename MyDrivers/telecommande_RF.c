@@ -11,7 +11,7 @@
 #include "telecommande_RF.h"
 
 //Initialiser le timer sur lequel sera branché le module RF 
-int telecommandeRF_init()
+void telecommandeRF_init()
 {
   LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
 	LL_GPIO_InitTypeDef My_LL_GPIO_Init_Struct;
@@ -32,6 +32,8 @@ int telecommandeRF_init()
 	LL_TIM_Init(TIM4, &My_LL_Tim_Init_Struct);
 
 	LL_TIM_IC_InitTypeDef My_LL_Tim_IC_Struct; //On va mtn s'occuper des input channel	
+	LL_TIM_IC_StructInit(&My_LL_Tim_IC_Struct);
+	LL_TIM_IC_Init(TIM4, LL_TIM_CHANNEL_CH2, &My_LL_Tim_IC_Struct);
 	
 //On va brancher sur TI1 et le STM récupère les infos dans les channel
 	LL_TIM_CC_EnableChannel(TIM4, LL_TIM_CHANNEL_CH1);
@@ -46,10 +48,10 @@ int telecommandeRF_init()
 
 
 //Voir RM008 p315 explication pour l'input + 
-int telecommandeRF_getpwm()
+void telecommandeRF_getpwm(double * pulse)
 {
-	int DutyCycle;
-	int Period;
+	double DutyCycle;
+	double Period;
 		
 	//Ecriture du Bit CC1S dans le registre CCR1
 	TIM4->CCMR1=TIM_CCMR1_CC1S_0;
@@ -60,9 +62,9 @@ int telecommandeRF_getpwm()
 	TIM4->CCER=(1<<TIM_CCER_CC1E_Pos);
 	TIM4->CCER=(1<<TIM_CCER_CC2E_Pos);
 	
-	DutyCycle=TIM4->CCR2;
-	Period=TIM4->CCR1;
+	DutyCycle=(TIM4->CCR2)/100.0;
+	Period=TIM4->CCR1/(FREQ_HORLOGE * 938.0);
 	
-	return DutyCycle*Period;
+	*pulse=DutyCycle*Period;
 	
 }

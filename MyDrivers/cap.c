@@ -12,7 +12,7 @@
 #include "math.h"
 
 //Initialiser le timer sur lequel sera  branché le moteur CC
-int cap_init (int ARR, int PSC)
+void cap_init (double ARR, double PSC)
 {
 	LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
 	LL_GPIO_InitTypeDef My_LL_GPIO_Init_Struct;
@@ -47,7 +47,7 @@ int cap_init (int ARR, int PSC)
 
 
 //RM008 p.318 explication pour envoyer le pwm
-int cap_send_to_moteur(int pulse, int PSC_cap)
+void cap_send_to_moteur(double pulse, double PSC_cap)
 {
 	TIM2->EGR = (1<<TIM_EGR_UG_Pos); 
 	//LL_TIM_GenerateEvent_UPDATE(TIM2)
@@ -74,10 +74,8 @@ int cap_send_to_moteur(int pulse, int PSC_cap)
 	
 }
 
-int cap_generate_pwm(int pulsation, int PSC_cap)
+void cap_generate_pwm(double pulsation, double PSC_cap)
 {
-	int valeur_ccr = pulsation * FREQ_HORLOGE * PSC_cap;
+	double valeur_ccr = pulsation * FREQ_HORLOGE * PSC_cap;
 	LL_TIM_OC_SetCompareCH2 (TIM2, valeur_ccr);
-
-	
 }
