@@ -23,7 +23,7 @@ int Rapport_Cyclique;
 int compare_value;
 	
 	
-int (*Ptr_Compare_Value); 
+
 	
 
 void bordage_conf_IO(void){
@@ -49,20 +49,21 @@ void bordage_conf_IO(void){
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_ALTERNATE);
 	
 	//Réglage du timer lié à la girouette
-	Timer_Conf((180-1), 1);
+	Timer_Girouette_Conf((180-1), 1);
 	
 	//Réglage du timer lié à la gestion des voiles
 	timer_voiles_conf((400-1),(3600-1));
 
 }
 
+
 void Bordage_Background(void){
 		
-		//alpha=get_alpha(TIM3);
-		alpha=45;
+		alpha=get_alpha(TIM3);
 		teta=voiles_alpha_to_teta(alpha);
 		MS=voiles_teta_to_ms(teta);
 		Rapport_Cyclique=voiles_rapport_cyclique(MS);
 		compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
-	  Ptr_Compare_Value= &compare_value;
+	  voiles_compare(compare_value);
+		//alpha+=10;
 }

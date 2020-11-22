@@ -14,10 +14,8 @@
 #include "stm32f1xx_ll_rcc.h"
 
 
-
-
 //Configuation du timer, en mode codeur incrémental
-void Timer_Conf(int Arr, int Psc){
+void Timer_Girouette_Conf(int Arr, int Psc){
 	
 	LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
 	
@@ -44,6 +42,7 @@ void Timer_Conf(int Arr, int Psc){
 	LL_TIM_IC_SetPolarity(TIM3, LL_TIM_CHANNEL_CH2,LL_TIM_IC_POLARITY_RISING);
 	
 }
+
 
 //Récupération de l'angle alpha de la girouette
 

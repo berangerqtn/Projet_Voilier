@@ -37,9 +37,6 @@ void timer_voiles_conf(int Arr, int Psc){
 	
 	//TIM1 en sortie PWM
 	LL_TIM_OC_SetMode(TIM1,LL_TIM_CHANNEL_CH1, LL_TIM_OCMODE_PWM1);
-	LL_TIM_OC_SetCompareCH1(TIM1, rapport_cyclique_to_comparevalue);
-
-//PB pour le passage en argument, on doit accéder à une variable dans bordage.c MAIS ON SAIT PAS FAIRE 
 }
 
 
@@ -50,8 +47,8 @@ float voiles_alpha_to_teta(int alpha){
 	if (alpha>0 && alpha<45){
 		teta =0.0;
 	}
-	else if (alpha>45 && alpha<180){
-		teta= (2/3)*alpha;
+	else if (alpha>=45 && alpha<180){
+		teta= ((2.00/3.00)*(float)alpha)-30.00;
 	}
 	return teta;
 }
@@ -60,17 +57,24 @@ float voiles_alpha_to_teta(int alpha){
 float voiles_teta_to_ms(float teta){
     //1ms => 90°, 2ms => 0°
 		//résolution 20pts par ms et 90° par ms => 4,5° par ms
-		return ((-teta/90)+2);
+		return ((-teta/90.00)+2.00);
 }
 
 //Calcul du rapport cyclique
 float voiles_rapport_cyclique (float MS){
-	return(MS/20);
+	return((MS/20.00)*100);
 }
 
 //conversion pour fixer CompareValue selon le rapport cyclique
 int rapport_cyclique_to_comparevalue(float RC){
 	int i;
-	i= (int) (400*RC);
+	i= (int) (4*RC);
 	return(i);
 }
+
+
+//récup le compare value et compare avec le signal
+int voiles_compare(int compare){
+	LL_TIM_OC_SetCompareCH1(TIM1, compare);
+}
+
