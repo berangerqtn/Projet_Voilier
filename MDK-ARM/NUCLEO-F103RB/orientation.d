@@ -1,6 +1,5 @@
 nucleo-f103rb\orientation.o: ..\Services\orientation.c
 nucleo-f103rb\orientation.o: ..\Services\orientation.h
-nucleo-f103rb\orientation.o: ..\MyDrivers\cap.c
 nucleo-f103rb\orientation.o: ..\MyDrivers\cap.h
 nucleo-f103rb\orientation.o: ..\LLDrivers\inc\stm32f1xx_ll_bus.h
 nucleo-f103rb\orientation.o: ..\Inc\stm32f1xx.h
@@ -13,6 +12,5 @@ nucleo-f103rb\orientation.o: C:\Users\Utilisateur\AppData\Local\Arm\Packs\ARM\CM
 nucleo-f103rb\orientation.o: ..\Inc\system_stm32f1xx.h
 nucleo-f103rb\orientation.o: ..\LLDrivers\inc\stm32f1xx_ll_tim.h
 nucleo-f103rb\orientation.o: ..\LLDrivers\inc\stm32f1xx_ll_gpio.h
-nucleo-f103rb\orientation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-nucleo-f103rb\orientation.o: ..\MyDrivers\telecommande_RF.c
 nucleo-f103rb\orientation.o: ..\MyDrivers\telecommande_RF.h
+nucleo-f103rb\orientation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

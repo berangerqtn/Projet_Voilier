@@ -8,7 +8,7 @@
 #define FREQ_HORLOGE 72000000
 
 void telecommandeRF_init(void);
-void telecommandeRF_getpwm(double *pulsation);
+int telecommandeRF_getpwm(void);
 
 
 

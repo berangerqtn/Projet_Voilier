@@ -27,8 +27,8 @@ void telecommandeRF_init()
 
 	
 	LL_TIM_StructInit(&My_LL_Tim_Init_Struct); //on met les parametre de timer par défaut
-	My_LL_Tim_Init_Struct.Prescaler=938; //40 points dans chaque sens => 5 degré de précision.
-	My_LL_Tim_Init_Struct.Autoreload=0xFFF; //On le met au max pour etre sur que ce soit bien le CCR qui remette a 0
+	My_LL_Tim_Init_Struct.Prescaler=3-1; //On regle pour avoir la def la plus haute possible : CCR2 compte jusqu'a max 65535 pdt 2 ms (sur 16 bits)
+	My_LL_Tim_Init_Struct.Autoreload=0xFFFF; //On le met au max pour etre sur que ce soit bien le CCR qui remette a 0
 	LL_TIM_Init(TIM4, &My_LL_Tim_Init_Struct);
 
 	LL_TIM_IC_InitTypeDef My_LL_Tim_IC_Struct; //On va mtn s'occuper des input channel	
@@ -48,10 +48,10 @@ void telecommandeRF_init()
 
 
 //Voir RM008 p315 explication pour l'input + 
-void telecommandeRF_getpwm(double * pulse)
+int telecommandeRF_getpwm()
 {
-	double DutyCycle;
-	double Period;
+	int Nbr_Pas_Etat_Haut;
+	int Nbr_Pas_Totaux;
 		
 	//Ecriture du Bit CC1S dans le registre CCR1
 	TIM4->CCMR1=TIM_CCMR1_CC1S_0;
@@ -62,9 +62,9 @@ void telecommandeRF_getpwm(double * pulse)
 	TIM4->CCER=(1<<TIM_CCER_CC1E_Pos);
 	TIM4->CCER=(1<<TIM_CCER_CC2E_Pos);
 	
-	DutyCycle=(TIM4->CCR2)/100.0;
-	Period=TIM4->CCR1/(FREQ_HORLOGE * 938.0);
+	Nbr_Pas_Etat_Haut=(TIM4->CCR2);
+	Nbr_Pas_Totaux=(TIM4->CCR1);
 	
-	*pulse=DutyCycle*Period;
-	
+	return Nbr_Pas_Etat_Haut; //Valeur min = 0.001* 72 000 000/Prescaler+1 =24000 et Valeur max = 0.001 * 72 000 000/Prescaler+1 =48 000
+	//On divise Nbr_Pas_Etat_Haut pas le nbr de pas totaux si besoin?
 }
