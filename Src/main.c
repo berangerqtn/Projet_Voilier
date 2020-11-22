@@ -20,8 +20,9 @@
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
 
-#include "Chrono.h"
-#include "usart.h"
+#include "bordage.h"
+#include "orientation.h"
+#include "affichage.h"
 
 void  SystemClock_Config(void);
 
@@ -41,8 +42,8 @@ int main(void)
 
   /* Add your application code here */
   // Configuration chronomètre
-	usart_conf(USART2,9600,LL_USART_DATAWIDTH_9B);
-	Chrono_Conf(TIM3);
+	//usart_conf(USART2,9600,LL_USART_DATAWIDTH_9B);
+	//Chrono_Conf(TIM3);
 	
 	// Lancement chronomètre
 	//Chrono_Start(); 
@@ -52,7 +53,7 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-		Chrono_Background();
+		//Chrono_Background();
   }
 }
 

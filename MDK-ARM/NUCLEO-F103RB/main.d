@@ -10,9 +10,6 @@ nucleo-f103rb\main.o: C:\Users\beran\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMS
 nucleo-f103rb\main.o: ..\Inc\system_stm32f1xx.h
 nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_utils.h
 nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_system.h
-nucleo-f103rb\main.o: ..\Services\Chrono.h
-nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_gpio.h
-nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_tim.h
-nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_bus.h
-nucleo-f103rb\main.o: ..\LLDrivers\inc\stm32f1xx_ll_usart.h
-nucleo-f103rb\main.o: ..\MyDrivers\usart.h
+nucleo-f103rb\main.o: ..\Services\bordage.h
+nucleo-f103rb\main.o: ..\Services\orientation.h
+nucleo-f103rb\main.o: ..\Services\affichage.h
