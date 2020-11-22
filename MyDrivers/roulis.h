@@ -3,7 +3,11 @@
 
 #include "stm32f1xx_ll_gpio.h"
 
-int roulis_init();
+
+//Configuration de l'IT pour lâcher les voiles
+int roulis_IT_conf(void (*roulis_lacher_voiles)(void), int Prio);
+
+
 int roulis_get();
 
 
