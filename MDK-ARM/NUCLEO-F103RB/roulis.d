@@ -9,3 +9,6 @@ nucleo-f103rb\roulis.o: C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\C
 nucleo-f103rb\roulis.o: C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
 nucleo-f103rb\roulis.o: C:\Users\leala\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
 nucleo-f103rb\roulis.o: ..\Inc\system_stm32f1xx.h
+nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_tim.h
+nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_rcc.h
+nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_bus.h

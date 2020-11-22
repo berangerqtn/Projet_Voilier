@@ -62,14 +62,12 @@ float voiles_teta_to_ms(float teta){
 
 //Calcul du rapport cyclique
 float voiles_rapport_cyclique (float MS){
-	return((MS/20.00)*100);
+	return((MS/20.00)*100.0);
 }
 
 //conversion pour fixer CompareValue selon le rapport cyclique
-int rapport_cyclique_to_comparevalue(float RC){
-	int i;
-	i= (int) (4*RC);
-	return(i);
+float rapport_cyclique_to_comparevalue(float RC){
+	return(4.0*RC);
 }
 
 

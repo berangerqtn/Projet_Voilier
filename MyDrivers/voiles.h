@@ -16,7 +16,7 @@ float voiles_teta_to_ms(float teta);
 float voiles_rapport_cyclique (float MS);
 
 //conversion pour fixer CompareValue selon le rapport cyclique
-int rapport_cyclique_to_comparevalue(float RC);
+float rapport_cyclique_to_comparevalue(float RC);
 
 //récupère la copmare value et l'utilise avec f° LL
 int voiles_compare(int compare);

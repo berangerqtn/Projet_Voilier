@@ -16,10 +16,10 @@
 #include "stm32f1xx_ll_bus.h"
 
 
-int alpha;
+int alpha=90;
 float teta;
 float MS;
-int Rapport_Cyclique;
+float Rapport_Cyclique;
 int compare_value;
 	
 	
@@ -59,11 +59,11 @@ void bordage_conf_IO(void){
 
 void Bordage_Background(void){
 		
-		alpha=get_alpha(TIM3);
+		//alpha=get_alpha(TIM3);
 		teta=voiles_alpha_to_teta(alpha);
 		MS=voiles_teta_to_ms(teta);
 		Rapport_Cyclique=voiles_rapport_cyclique(MS);
 		compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
-	  voiles_compare(compare_value);
-		//alpha+=10;
+	  voiles_compare((int)compare_value);
+		alpha+=10;
 }

@@ -10,6 +10,9 @@
 
 #include "roulis.h"
 #include "stm32f1xx_ll_gpio.h"
+#include "stm32f1xx_ll_tim.h" 
+#include "stm32f1xx_ll_rcc.h"
+#include "stm32f1xx_ll_bus.h" // Pour l'activation des horloges
 
 int roulis_init()
 {
