@@ -1,35 +1,43 @@
-============= Génération de ce projet, Léa Laxague, Florain Convert, Baptiste Lerat, Béranger Quintana ===========================================
-Le projet est basé sur CubeF1/STM32Cube_FW_F1_V1.8.0/Projects/STM32F103RB-Nucleo/Templates_LL
-La seconde partie de ce readme est l'original qu'on peut trouver dans /Templates_LL
+#####################################################################					 
+#          4AE SE - Programmation de micro contrôleurs              #
+#####################################################################
+#  CONVERT FLORIAN, LAXAGUE LEA, LERAT BAPTISTE, QUINTANA BERANGER  #
+#####################################################################
 
-NB: curieusement ds le main, la fonction void SystemClock_Config(void) est différente des exemples LL.
-Elle est donc modifiée pour coller à tout les exemples LL, en particulier, elle utilise la lib utils.
+Ce projet a pour objectif de programmer l'automatisation d'un modèle
+réduit de voilier. Cela passe par une appréhension des variations du
+vent, mais également un contrôle du cap de bateau, le tout avec dans
+l'idéal un suivi de l'état du bateau en temps réel sur un écran LCD.
+
+Pour se faire nous passons par la mise en place d'un logiciel embarqué
+sur une puce STM32. Ce travail s'inscrit dans le cadre d'un Bureau 
+d'études de la formation ingénieur en automatiques et électroniques de
+l'INSA Toulouse. Le détail des périphériques utilisés se trouve en 
+annexe au projet, avec en parallèle un diagramme des classes faisant
+état de la structure logicielle choisie par l'équipe.
+
+En deuxième partie de ce readme, vous trouverez les informations relatives
+aux librairies LL utilisées pour la mise en place de ce projet.
 
 
-Cette partie du readme explique les modifications apportées à Templates_LL
-=============================================================================================
-
-*********************** LES MODIFICATIONS    ************************************************
-
-#############  Structuration du projet, du répertoire (modif par rapport au template ########
-
-La philosophie générale est de partir du template et de sortir du projet tout ce qui n'est pas utile
-en terme de lib LL. On a tout de même besoin de RCC et de utils (les deux pour la clock conf)
-Chaque projet est donc "self contained" et contient les lib LL dont il a besoin.
-
+#############  Structuration du projet, du répertoire  #############
 
 Structure physique des répertoire
 /Inc (h "systeme")
 /src (main et system_stm32f1xx.c = systeminit au boot startup)
 /LLDrivers : src et inc des drivers LL utiles, ici rcc et utils
 /MDK-ARM : le projet KEIL
-/Services: vide pour l'instant...
+/Services: bordage.c orientation.c affichage.c
 
-Structure de groupes de KEIL en deux grandes parties :
+Structure de groupes de KEIL en deux grandes parties : Se référer au 
+diagramme de classe fourni dans le projet pour une meilleure apréhension
+de la structuration logicielle.
+
+
 Partie sources user
-/User Applications
-/User Services
-/MyDriver    les drivers à faire à la main ...
+/User Applications : le main qui sera exécuté par le STM32
+/User Services : les fonctions de services, de haut niveau, qui n'interragissent pas directement avec les périphériques
+/MyDriver    soit les drivers de périphériques créés pour la gestion automatique du voilier en fonction des beosoins du cahier des charges
 /Drivers/STM32f1xx_LL_Driver
 /Doc
 
@@ -37,21 +45,49 @@ Partie système
 /Drivers/CMSIS (l'init system depuis boot)
 /Example/MDK-ARM contient le startup
 
+#####################################################################
+							  BORDAGE
+#####################################################################
+   Service : bordage.c || Périph : roulis.c, voiles.c girouette.c
+#####################################################################
 
-###### La récupération des IT     ##############
-La philosophie LL est de récupérer les IT dans un fichier spécifique stm32f1xx_it.c.
-Il est supprimé de manière à ce que les handlers soient placés dans les divers modules que les
-étudiants construiront.
+Cette partie du code permet d'adapter la position des voiles en fonction de la 
+puissance et de l'orientation du vent. 
+
+La girouette nous permet de récupérer ces infos qui sont ensuites traitées
+par les fonctions du fichier bordage, et les informations de commande du 
+servomoteur sont transmises via le GPIOA du STM32, via un signal PWM.
+
+#####################################################################
+							ORIENTATION
+#####################################################################
+     Service : orientation.c || Périph : cap.c, telecommandeRF.c 
+#####################################################################
+
+Ici, il s'agit de contrôler le cap du voilier en récupérant les 
+informations depuis une télécommande qui émet via un module RF.
+Le signal PWM ainsi reçu est ensuite traité puis retransmis au 
+moteur à courant continu du contrôle du gouvernail (ici, un plateau
+en rotation).
+
+#####################################################################
+							  AFFICHAGE
+#####################################################################
+   Service : affichage.c || Périph : data.c
+#####################################################################
+
+Ces fichiers permettent de récupérer les différentes informations liées
+à l'état du bateau en temps réel, et de les envoyer via USART à un module 
+externe, qui aurait du être un écran pilote par I2C, mais nous n'avons 
+pas pu mettre en place cette dernière passerelle entre l'USART du STM32, 
+et l'I2C de l'écran
 
 
-###### Divers main    ##############
-main.h enlevé
-Remarque ligne 72   LL_RCC_HSE_EnableBypass();, si on devait travailler sur MCBSTM32, il faudrait commenter la ligne
-Ligne 108 commentée, il s'agit de l'activation systick inutile mais qui active les IT non récupérée ... donc otée
 
 
-
-
+#####################################################################
+                            Librairies LL
+#####################################################################
 
 /**
   @page Templates_LL  Description of the Templates_LL example

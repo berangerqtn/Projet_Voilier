@@ -14,15 +14,27 @@ Section Cross References
     main.o(i.main) refers to orientation.o(i.gerer_orientation) for gerer_orientation
     main.o(i.main) refers to bordage.o(i.Bordage_Background) for Bordage_Background
     main.o(i.main) refers to affichage.o(i.affichage_background) for affichage_background
-    bordage.o(i.Bordage_Background) refers to voiles.o(i.voiles_alpha_to_teta) for voiles_alpha_to_teta
-    bordage.o(i.Bordage_Background) refers to voiles.o(i.voiles_teta_to_ms) for voiles_teta_to_ms
-    bordage.o(i.Bordage_Background) refers to voiles.o(i.voiles_rapport_cyclique) for voiles_rapport_cyclique
-    bordage.o(i.Bordage_Background) refers to voiles.o(i.rapport_cyclique_to_comparevalue) for rapport_cyclique_to_comparevalue
-    bordage.o(i.Bordage_Background) refers to ffixi.o(.text) for __aeabi_f2iz
-    bordage.o(i.Bordage_Background) refers to voiles.o(i.voiles_compare) for voiles_compare
+    bordage.o(i.Bordage_Background) refers to girouette.o(i.get_alpha) for get_alpha
+    bordage.o(i.Bordage_Background) refers to bordage.o(i.bordage_border_voiles) for bordage_border_voiles
+    bordage.o(i.Bordage_Background) refers to roulis.o(i.roulis_get) for roulis_get
+    bordage.o(i.Bordage_Background) refers to bordage.o(i.bordage_lacher_voiles) for bordage_lacher_voiles
     bordage.o(i.Bordage_Background) refers to bordage.o(.data) for alpha
-    bordage.o(i.bordage_conf_IO) refers to girouette.o(i.Timer_Girouette_Conf) for Timer_Girouette_Conf
-    bordage.o(i.bordage_conf_IO) refers to voiles.o(i.timer_voiles_conf) for timer_voiles_conf
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(i.voiles_alpha_to_teta) for voiles_alpha_to_teta
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(i.voiles_teta_to_ms) for voiles_teta_to_ms
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(i.voiles_rapport_cyclique) for voiles_rapport_cyclique
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(i.rapport_cyclique_to_comparevalue) for rapport_cyclique_to_comparevalue
+    bordage.o(i.bordage_border_voiles) refers to ffixi.o(.text) for __aeabi_f2iz
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(i.voiles_compare) for voiles_compare
+    bordage.o(i.bordage_border_voiles) refers to bordage.o(.data) for teta
+    bordage.o(i.bordage_border_voiles) refers to voiles.o(.data) for teta
+    bordage.o(i.bordage_conf_IO) refers to girouette.o(i.Girouette_Conf) for Girouette_Conf
+    bordage.o(i.bordage_conf_IO) refers to voiles.o(i.voiles_conf) for voiles_conf
+    bordage.o(i.bordage_lacher_voiles) refers to voiles.o(i.voiles_teta_to_ms) for voiles_teta_to_ms
+    bordage.o(i.bordage_lacher_voiles) refers to voiles.o(i.voiles_rapport_cyclique) for voiles_rapport_cyclique
+    bordage.o(i.bordage_lacher_voiles) refers to voiles.o(i.rapport_cyclique_to_comparevalue) for rapport_cyclique_to_comparevalue
+    bordage.o(i.bordage_lacher_voiles) refers to ffixi.o(.text) for __aeabi_f2iz
+    bordage.o(i.bordage_lacher_voiles) refers to voiles.o(i.voiles_compare) for voiles_compare
+    bordage.o(i.bordage_lacher_voiles) refers to bordage.o(.data) for MS
     affichage.o(i.DATA_init) refers to data.o(i.DATA_USART_init) for DATA_USART_init
     affichage.o(i.DATA_init) refers to data.o(i.DATA_GPIO_init) for DATA_GPIO_init
     affichage.o(i.affichage_3sec) refers to printf1.o(i.__0sprintf$1) for __2sprintf
@@ -38,11 +50,11 @@ Section Cross References
     orientation.o(i.orientation_init) refers to dfixi.o(.text) for __aeabi_d2iz
     orientation.o(i.orientation_init) refers to cap.o(i.cap_init) for cap_init
     orientation.o(i.orientation_init) refers to telecommande_rf.o(i.telecommandeRF_init) for telecommandeRF_init
+    girouette.o(i.Girouette_Conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    girouette.o(i.Girouette_Conf) refers to girouette.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
+    girouette.o(i.Girouette_Conf) refers to girouette.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
+    girouette.o(i.Girouette_Conf) refers to girouette.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
     girouette.o(i.LL_TIM_IC_SetPolarity) refers to girouette.o(.constdata) for SHIFT_TAB_CCxP
-    girouette.o(i.Timer_Girouette_Conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
-    girouette.o(i.Timer_Girouette_Conf) refers to girouette.o(i.LL_TIM_CC_EnableChannel) for LL_TIM_CC_EnableChannel
-    girouette.o(i.Timer_Girouette_Conf) refers to girouette.o(i.LL_TIM_IC_SetPolarity) for LL_TIM_IC_SetPolarity
-    girouette.o(i.Timer_Girouette_Conf) refers to girouette.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
     telecommande_rf.o(i.LL_TIM_IC_SetPolarity) refers to telecommande_rf.o(.constdata) for SHIFT_TAB_CCxP
     telecommande_rf.o(i.telecommandeRF_init) refers to stm32f1xx_ll_gpio.o(i.LL_GPIO_StructInit) for LL_GPIO_StructInit
     telecommande_rf.o(i.telecommandeRF_init) refers to telecommande_rf.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
@@ -56,14 +68,16 @@ Section Cross References
     voiles.o(i.rapport_cyclique_to_comparevalue) refers to f2d.o(.text) for __aeabi_f2d
     voiles.o(i.rapport_cyclique_to_comparevalue) refers to dmul.o(.text) for __aeabi_dmul
     voiles.o(i.rapport_cyclique_to_comparevalue) refers to d2f.o(.text) for __aeabi_d2f
-    voiles.o(i.timer_voiles_conf) refers to voiles.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
-    voiles.o(i.timer_voiles_conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
-    voiles.o(i.timer_voiles_conf) refers to voiles.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
     voiles.o(i.voiles_alpha_to_teta) refers to fflti.o(.text) for __aeabi_i2f
     voiles.o(i.voiles_alpha_to_teta) refers to f2d.o(.text) for __aeabi_f2d
     voiles.o(i.voiles_alpha_to_teta) refers to dmul.o(.text) for __aeabi_dmul
     voiles.o(i.voiles_alpha_to_teta) refers to dadd.o(.text) for __aeabi_dsub
     voiles.o(i.voiles_alpha_to_teta) refers to d2f.o(.text) for __aeabi_d2f
+    voiles.o(i.voiles_alpha_to_teta) refers to bordage.o(.data) for teta
+    voiles.o(i.voiles_alpha_to_teta) refers to voiles.o(.data) for teta
+    voiles.o(i.voiles_conf) refers to voiles.o(i.LL_GPIO_SetPinMode) for LL_GPIO_SetPinMode
+    voiles.o(i.voiles_conf) refers to stm32f1xx_ll_tim.o(i.LL_TIM_Init) for LL_TIM_Init
+    voiles.o(i.voiles_conf) refers to voiles.o(i.LL_TIM_OC_SetMode) for LL_TIM_OC_SetMode
     voiles.o(i.voiles_rapport_cyclique) refers to f2d.o(.text) for __aeabi_f2d
     voiles.o(i.voiles_rapport_cyclique) refers to ddiv.o(.text) for __aeabi_ddiv
     voiles.o(i.voiles_rapport_cyclique) refers to dmul.o(.text) for __aeabi_dmul
@@ -170,6 +184,7 @@ Section Cross References
     system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
     startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(STACK) for __initial_sp
     startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(.text) for Reset_Handler
+    startup_stm32f103xb.o(RESET) refers to girouette.o(i.EXTI9_5_IRQHandler) for EXTI9_5_IRQHandler
     startup_stm32f103xb.o(.text) refers to system_stm32f1xx.o(i.SystemInit) for SystemInit
     startup_stm32f103xb.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
@@ -450,106 +465,3 @@ Section Cross References
     dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
 
-
-==============================================================================
-
-Removing Unused input sections from the image.
-
-    Removing main.o(.rev16_text), (4 bytes).
-    Removing main.o(.revsh_text), (4 bytes).
-    Removing main.o(.rrx_text), (6 bytes).
-    Removing main.o(.constdata), (35 bytes).
-    Removing bordage.o(.rev16_text), (4 bytes).
-    Removing bordage.o(.revsh_text), (4 bytes).
-    Removing bordage.o(.rrx_text), (6 bytes).
-    Removing bordage.o(.constdata), (35 bytes).
-    Removing affichage.o(.rev16_text), (4 bytes).
-    Removing affichage.o(.revsh_text), (4 bytes).
-    Removing affichage.o(.rrx_text), (6 bytes).
-    Removing orientation.o(.rev16_text), (4 bytes).
-    Removing orientation.o(.revsh_text), (4 bytes).
-    Removing orientation.o(.rrx_text), (6 bytes).
-    Removing orientation.o(.constdata), (35 bytes).
-    Removing girouette.o(.rev16_text), (4 bytes).
-    Removing girouette.o(.revsh_text), (4 bytes).
-    Removing girouette.o(.rrx_text), (6 bytes).
-    Removing girouette.o(i.get_alpha), (8 bytes).
-    Removing telecommande_rf.o(.rev16_text), (4 bytes).
-    Removing telecommande_rf.o(.revsh_text), (4 bytes).
-    Removing telecommande_rf.o(.rrx_text), (6 bytes).
-    Removing telecommande_rf.o(i.telecommandeRF_getpwm), (64 bytes).
-    Removing voiles.o(.rev16_text), (4 bytes).
-    Removing voiles.o(.revsh_text), (4 bytes).
-    Removing voiles.o(.rrx_text), (6 bytes).
-    Removing roulis.o(.rev16_text), (4 bytes).
-    Removing roulis.o(.revsh_text), (4 bytes).
-    Removing roulis.o(.rrx_text), (6 bytes).
-    Removing roulis.o(i.ADC_init), (116 bytes).
-    Removing roulis.o(i.LL_ADC_INJ_ReadConversionData32), (36 bytes).
-    Removing roulis.o(i.LL_ADC_INJ_SetSequencerRanks), (46 bytes).
-    Removing roulis.o(i.roulis_get), (92 bytes).
-    Removing roulis.o(.constdata), (35 bytes).
-    Removing cap.o(.rev16_text), (4 bytes).
-    Removing cap.o(.revsh_text), (4 bytes).
-    Removing cap.o(.rrx_text), (6 bytes).
-    Removing data.o(.rev16_text), (4 bytes).
-    Removing data.o(.revsh_text), (4 bytes).
-    Removing data.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_rcc.o(.rev16_text), (4 bytes).
-    Removing stm32f1xx_ll_rcc.o(.revsh_text), (4 bytes).
-    Removing stm32f1xx_ll_rcc.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_rcc.o(i.LL_RCC_DeInit), (152 bytes).
-    Removing stm32f1xx_ll_rcc.o(i.LL_RCC_GetADCClockFreq), (124 bytes).
-    Removing stm32f1xx_ll_rcc.o(i.LL_RCC_GetUSBClockFreq), (120 bytes).
-    Removing stm32f1xx_ll_rcc.o(i.LL_RCC_PLL_IsReady), (16 bytes).
-    Removing stm32f1xx_ll_utils.o(.rev16_text), (4 bytes).
-    Removing stm32f1xx_ll_utils.o(.revsh_text), (4 bytes).
-    Removing stm32f1xx_ll_utils.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSE), (260 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_PLL_ConfigSystemClock_HSI), (104 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_RCC_HSE_IsReady), (16 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_RCC_HSI_IsReady), (16 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_RCC_PLL_ConfigDomain_SYS), (28 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_RCC_PLL_IsReady), (16 bytes).
-    Removing stm32f1xx_ll_utils.o(i.LL_mDelay), (40 bytes).
-    Removing stm32f1xx_ll_utils.o(i.UTILS_EnablePLLAndSwitchSystem), (416 bytes).
-    Removing stm32f1xx_ll_utils.o(i.UTILS_GetPLLOutputFrequency), (228 bytes).
-    Removing stm32f1xx_ll_utils.o(i.UTILS_PLL_IsBusy), (16 bytes).
-    Removing stm32f1xx_ll_utils.o(i.UTILS_SetFlashLatency), (80 bytes).
-    Removing stm32f1xx_ll_tim.o(.rev16_text), (4 bytes).
-    Removing stm32f1xx_ll_tim.o(.revsh_text), (4 bytes).
-    Removing stm32f1xx_ll_tim.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_APB1_GRP1_ForceReset), (16 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_APB1_GRP1_ReleaseReset), (16 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_BDTR_Init), (312 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_BDTR_StructInit), (18 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_DeInit), (192 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_ENCODER_Init), (688 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_ENCODER_StructInit), (36 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_HALLSENSOR_Init), (396 bytes).
-    Removing stm32f1xx_ll_tim.o(i.LL_TIM_HALLSENSOR_StructInit), (12 bytes).
-    Removing stm32f1xx_ll_tim.o(.constdata), (35 bytes).
-    Removing stm32f1xx_ll_usart.o(.rev16_text), (4 bytes).
-    Removing stm32f1xx_ll_usart.o(.revsh_text), (4 bytes).
-    Removing stm32f1xx_ll_usart.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_usart.o(i.LL_APB1_GRP1_ForceReset), (16 bytes).
-    Removing stm32f1xx_ll_usart.o(i.LL_APB1_GRP1_ReleaseReset), (16 bytes).
-    Removing stm32f1xx_ll_usart.o(i.LL_USART_ClockInit), (276 bytes).
-    Removing stm32f1xx_ll_usart.o(i.LL_USART_ClockStructInit), (12 bytes).
-    Removing stm32f1xx_ll_usart.o(i.LL_USART_DeInit), (180 bytes).
-    Removing stm32f1xx_ll_gpio.o(.rev16_text), (4 bytes).
-    Removing stm32f1xx_ll_gpio.o(.revsh_text), (4 bytes).
-    Removing stm32f1xx_ll_gpio.o(.rrx_text), (6 bytes).
-    Removing stm32f1xx_ll_gpio.o(i.LL_APB2_GRP1_ForceReset), (16 bytes).
-    Removing stm32f1xx_ll_gpio.o(i.LL_APB2_GRP1_ReleaseReset), (16 bytes).
-    Removing stm32f1xx_ll_gpio.o(i.LL_GPIO_DeInit), (212 bytes).
-    Removing stm32f1xx_ll_gpio.o(i.LL_GPIO_Init), (504 bytes).
-    Removing system_stm32f1xx.o(.rev16_text), (4 bytes).
-    Removing system_stm32f1xx.o(.revsh_text), (4 bytes).
-    Removing system_stm32f1xx.o(.rrx_text), (6 bytes).
-    Removing system_stm32f1xx.o(i.SystemCoreClockUpdate), (164 bytes).
-    Removing startup_stm32f103xb.o(HEAP), (512 bytes).
-    Removing dfixul.o(.text), (48 bytes).
-    Removing cdrcmple.o(.text), (48 bytes).
-
-96 unused section(s) (total 6099 bytes) removed from the image.

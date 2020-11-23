@@ -4,7 +4,7 @@
 #include "stm32f1xx_ll_gpio.h"
 
 //Config du TIM1 en PWM output
-void timer_voiles_conf(int Arr, int Psc);
+void voiles_conf(int Arr, int Psc);
 
 //Conversion de ALPHA reçu du capteur en TETA pour les voiles
 float voiles_alpha_to_teta(int alpha);

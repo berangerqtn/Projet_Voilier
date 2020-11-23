@@ -16,7 +16,7 @@
 
 float teta;
 
-void timer_voiles_conf(int Arr, int Psc)
+void voiles_conf(int Arr, int Psc)
 {
 	//Configuration du GPIOA pour la commande du ServoMoteur
 	//Configuration du Pin8 (sortie STM32 en PWM) en output alternate

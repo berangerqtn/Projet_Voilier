@@ -22,7 +22,7 @@
 // IT quand dépassement du seuil
 // on reçoit une valeur analogique qu'on converti en numérique avec l'ADC
 
-void ADC_init () 
+void ADC_init ()
 {
 	//Synchro de la clock de l'adc 
 	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1);

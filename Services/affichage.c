@@ -9,7 +9,7 @@
 //    Fichier de programmation de l'affichage des informations
 
 #include "affichage.h"
-#include <stdio.h>
+
 
 void DATA_init()
 {

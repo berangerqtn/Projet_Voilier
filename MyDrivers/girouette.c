@@ -15,7 +15,7 @@
 
 
 //Configuation du timer, en mode codeur incrémental
-void Timer_Girouette_Conf(int Arr, int Psc)
+void Girouette_Conf(int Arr, int Psc)
 {
 	
 	LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
