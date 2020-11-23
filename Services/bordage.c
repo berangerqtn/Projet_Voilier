@@ -22,36 +22,13 @@ float MS;
 float Rapport_Cyclique;
 int compare_value;
 	
-	
 
-	
-
-void bordage_conf_IO(void){
-	
-	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);
-	
-	//On ne se sert que du GPIOA
-	
-	//Configuration du Pin6 (arrivée ChannelA capteur incrémental girouette) en floating input
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_INPUT);
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_FLOATING);
-	
-	//Configuration du Pin7 (arrivée ChannelB capteur incrémental girouette) en floating input
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_INPUT);
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_FLOATING);
-	
-	//Configuration du Pin5 (arrivée Index capteur incrémental girouette) en floating input
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
-	
-	//Configuration du Pin8 (sortie STM32 en PWM) en output alternate
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_OUTPUT);
-	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_ALTERNATE);
-	
-	//Réglage du timer lié à la girouette
+void bordage_conf_IO(void)
+{
+	//Réglage du Timer et GPIO lié à la girouette
 	Timer_Girouette_Conf((180-1), 1);
 	
-	//Réglage du timer lié à la gestion des voiles
+	//Réglage du timer et GPIO lié à la gestion des voiles
 	timer_voiles_conf((400-1),(3600-1));
 
 }

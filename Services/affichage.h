@@ -4,11 +4,15 @@
 #define AFFICHAGE_H
 
 #include "data.h"
-int tension_actuelle=0;
+
 
 void envoi_roulis(char*message);
-void affichage_gestion(void);
-void affichage_background(void);
+void envoi_batterie(char* message);
+
+void DATA_init();
+
+void affichage_3sec(int tension, char* message);
+void affichage_background(int roulis, int tension, int batterie);
 
 
 

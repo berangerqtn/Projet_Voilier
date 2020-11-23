@@ -43,15 +43,16 @@ int main(void)
 	
   /* Configure the system clock to 72 MHz */
   SystemClock_Config();
-	orientation_init();
-	bordage_conf_IO();
-	
-	int info_roulis;
-  /* Add your application code here */
-  // Configuration chronomètre
 
-	// Lancement chronomètre
-	//Chrono_Start(); 
+	//Création des variables globales pour l'exécution du programme
+	int info_roulis=0;
+	int tension_actuelle=0;
+	int batterie=0;
+	
+  // Configuration des périphériques
+	bordage_conf_IO();
+	orientation_init();
+	DATA_init();
   
   /* Infinite loop */
   while (1)
@@ -60,7 +61,7 @@ int main(void)
 		Bordage_Background();
 		//Roulis : angles de roulis 
 		//(info_roulis,tension_actuelle)=roulis_background()
-		affichage_background();
+		affichage_background(info_roulis,tension_actuelle,batterie);
 		
 		
   }

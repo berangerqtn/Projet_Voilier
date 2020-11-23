@@ -11,10 +11,24 @@
 #include "affichage.h"
 #include <stdio.h>
 
+void DATA_init()
+{
+	DATA_USART_init();
+	DATA_GPIO_init();
+}
+
 void envoi_roulis(char* message)
 {
 	{
 		message="Attention, Angles de roulis supérieur 40°, voiles déployées";
+		DATA_USART_send(message);
+	}
+}
+
+void envoi_batterie(char* message)
+{
+	{
+		message="Attention, Batterie faible (charge inférieure à 20%)";
 		DATA_USART_send(message);
 	}
 }
@@ -28,13 +42,13 @@ void affichage_3sec(int tension, char* message)
 	
 }
 
-void affichage_background(int roulis, int tension)
+void affichage_background(int roulis, int tension,int batterie)
 {
 	char*message;
 	affichage_3sec(tension,message);
 	if (roulis>40)
-	{
 		envoi_roulis(message);
-	}
+	if (batterie<20)
+		envoi_batterie(message);
 	
 }

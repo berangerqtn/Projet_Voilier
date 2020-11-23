@@ -42,6 +42,25 @@ void Timer_Girouette_Conf(int Arr, int Psc)
 	LL_TIM_CC_EnableChannel(TIM3, LL_TIM_CHANNEL_CH2);
 	LL_TIM_IC_SetPolarity(TIM3, LL_TIM_CHANNEL_CH2,LL_TIM_IC_POLARITY_RISING);
 	
+
+	//Configuration du GPIO.
+	
+	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA);
+	
+	//On ne se sert que du GPIOA
+	
+	//Configuration du Pin6 (arrivée ChannelA capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_6,LL_GPIO_MODE_FLOATING);
+	
+	//Configuration du Pin7 (arrivée ChannelB capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_7,LL_GPIO_MODE_FLOATING);
+	
+	//Configuration du Pin5 (arrivée Index capteur incrémental girouette) en floating input
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
+	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
+	
 }
 
 
