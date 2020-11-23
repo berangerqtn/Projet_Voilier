@@ -16,7 +16,7 @@
 #include "stm32f1xx_ll_bus.h"
 
 
-int alpha=90;
+int alpha;
 float teta;
 float MS;
 float Rapport_Cyclique;
@@ -44,7 +44,7 @@ void bordage_conf_IO(void){
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
 	
-	//Configuration du Pin8 (sortie STM32 en PWM) en output floating
+	//Configuration du Pin8 (sortie STM32 en PWM) en alternate output
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_OUTPUT);
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_ALTERNATE);
 	
@@ -59,11 +59,11 @@ void bordage_conf_IO(void){
 
 void Bordage_Background(void){
 		
-		//alpha=get_alpha(TIM3);
+		alpha=get_alpha(TIM3);
 		teta=voiles_alpha_to_teta(alpha);
 		MS=voiles_teta_to_ms(teta);
 		Rapport_Cyclique=voiles_rapport_cyclique(MS);
 		compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
 	  voiles_compare((int)compare_value);
-		alpha+=10;
+		//alpha+=10;
 }
