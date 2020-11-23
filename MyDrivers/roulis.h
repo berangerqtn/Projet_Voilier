@@ -5,10 +5,8 @@
 
 
 //Configuration de l'IT pour lâcher les voiles
-int roulis_IT_conf(void (*roulis_lacher_voiles)(void), int Prio);
 
-
-int roulis_get(void);
+int roulis_get(uint32_t Channel);
 
 
 
