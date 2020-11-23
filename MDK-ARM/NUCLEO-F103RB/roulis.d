@@ -13,5 +13,6 @@ nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_tim.h
 nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_rcc.h
 nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_bus.h
 nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_adc.h
+nucleo-f103rb\roulis.o: ..\LLDrivers\inc\stm32f1xx_ll_utils.h
 nucleo-f103rb\roulis.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 nucleo-f103rb\roulis.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

@@ -72,6 +72,9 @@ Section Cross References
     voiles.o(i.voiles_teta_to_ms) refers to ddiv.o(.text) for __aeabi_ddiv
     voiles.o(i.voiles_teta_to_ms) refers to dadd.o(.text) for __aeabi_dadd
     voiles.o(i.voiles_teta_to_ms) refers to d2f.o(.text) for __aeabi_d2f
+    roulis.o(i.ADC_init) refers to roulis.o(i.LL_ADC_INJ_SetSequencerRanks) for LL_ADC_INJ_SetSequencerRanks
+    roulis.o(i.ADC_init) refers to stm32f1xx_ll_utils.o(i.LL_mDelay) for LL_mDelay
+    roulis.o(i.roulis_get) refers to roulis.o(i.LL_ADC_INJ_ReadConversionData32) for LL_ADC_INJ_ReadConversionData32
     cap.o(i.LL_TIM_OC_EnablePreload) refers to cap.o(.constdata) for OFFSET_TAB_CCMRx
     cap.o(i.LL_TIM_OC_SetMode) refers to cap.o(.constdata) for OFFSET_TAB_CCMRx
     cap.o(i.cap_init) refers to stm32f1xx_ll_tim.o(i.LL_TIM_StructInit) for LL_TIM_StructInit
@@ -481,8 +484,10 @@ Removing Unused input sections from the image.
     Removing roulis.o(.rev16_text), (4 bytes).
     Removing roulis.o(.revsh_text), (4 bytes).
     Removing roulis.o(.rrx_text), (6 bytes).
-    Removing roulis.o(i.ADC_init), (80 bytes).
-    Removing roulis.o(i.roulis_get), (4 bytes).
+    Removing roulis.o(i.ADC_init), (116 bytes).
+    Removing roulis.o(i.LL_ADC_INJ_ReadConversionData32), (36 bytes).
+    Removing roulis.o(i.LL_ADC_INJ_SetSequencerRanks), (46 bytes).
+    Removing roulis.o(i.roulis_get), (92 bytes).
     Removing roulis.o(.constdata), (35 bytes).
     Removing cap.o(.rev16_text), (4 bytes).
     Removing cap.o(.revsh_text), (4 bytes).
@@ -547,4 +552,4 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-94 unused section(s) (total 5893 bytes) removed from the image.
+96 unused section(s) (total 6099 bytes) removed from the image.

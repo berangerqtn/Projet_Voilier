@@ -6,7 +6,7 @@
 
 //Configuration de l'IT pour lâcher les voiles
 
-int roulis_get(uint32_t Channel);
+int roulis_get(int num_channel);
 
 
 
