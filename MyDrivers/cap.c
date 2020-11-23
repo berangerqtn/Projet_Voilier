@@ -78,4 +78,5 @@ void cap_generate_pwm(int pulsation)
 {
 	int valeur_ccr = pulsation;
 	LL_TIM_OC_SetCompareCH2 (TIM2, valeur_ccr);
+	LL_TIM_EnableCounter(TIM2);
 }
