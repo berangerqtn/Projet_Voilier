@@ -44,15 +44,20 @@ void DATA_GPIO_init(void)
 
 void DATA_USART_send(char*message)
 {
-		int i=0;
+	//On active le Pin 11 quand on doit envoyer.On met le 
+	LL_GPIO_SetOutputPin(GPIOA,LL_GPIO_PIN_11);
+	
+	int i=0;
 	while(*(message+i)!='\0')
 	{
 		while (LL_USART_IsActiveFlag_TXE(USART3)!=1)
 		{
 			//On attend que le flag soit actif <=> le registre est vide
 		}
+
 		LL_USART_TransmitData8(USART3,*(message+i));
 		i++;
 		
 	}
+	LL_GPIO_ResetOutputPin(GPIOA,LL_GPIO_PIN_11);
 }
