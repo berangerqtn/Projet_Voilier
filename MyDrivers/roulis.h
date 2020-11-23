@@ -8,7 +8,7 @@
 int roulis_IT_conf(void (*roulis_lacher_voiles)(void), int Prio);
 
 
-int roulis_get();
+int roulis_get(void);
 
 
 

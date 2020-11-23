@@ -19,10 +19,13 @@
 #include "stm32f1xx_ll_rcc.h" // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
+#include <string.h>
 
 //#include "Chrono.h"
 //#include "usart.h"
 #include "orientation.h"
+#include "bordage.h"
+#include "affichage.h"
 
 void  SystemClock_Config(void);
 
@@ -37,21 +40,29 @@ void  SystemClock_Config(void);
 
 int main(void)
 {
+	
   /* Configure the system clock to 72 MHz */
   SystemClock_Config();
-
+	orientation_init();
+	bordage_conf_IO();
+	
+	int info_roulis;
   /* Add your application code here */
   // Configuration chronomètre
 
 	// Lancement chronomètre
 	//Chrono_Start(); 
-	
-
   
   /* Infinite loop */
   while (1)
   {
 		gerer_orientation();
+		Bordage_Background();
+		//Roulis : angles de roulis 
+		//(info_roulis,tension_actuelle)=roulis_background()
+		affichage_background();
+		
+		
   }
 }
 

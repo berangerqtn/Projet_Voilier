@@ -437,6 +437,11 @@
               <FileType>1</FileType>
               <FilePath>..\MyDrivers\cap.c</FilePath>
             </File>
+            <File>
+              <FileName>data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\data.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -934,6 +939,11 @@
               <FileName>cap.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MyDrivers\cap.c</FilePath>
+            </File>
+            <File>
+              <FileName>data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyDrivers\data.c</FilePath>
             </File>
           </Files>
         </Group>

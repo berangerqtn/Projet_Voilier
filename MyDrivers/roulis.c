@@ -22,11 +22,13 @@
 void (*ptr_roulis)(void);
 
 
-int roulis_IT_conf(void (*roulis_lacher_voiles)(void), int Prio){
+int roulis_IT_conf(void (*roulis_lacher_voiles)(void), int Prio)
+{
 	ptr_roulis = roulis_lacher_voiles;
 }
 
-void ADC1_2_IRQHandler(void){
+void ADC1_2_IRQHandler(void)
+{
 	//lâcher les voiles
 	
 	//rabaisser le FLAG

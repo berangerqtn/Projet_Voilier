@@ -15,7 +15,8 @@
 
 
 //Configuation du timer, en mode codeur incrémental
-void Timer_Girouette_Conf(int Arr, int Psc){
+void Timer_Girouette_Conf(int Arr, int Psc)
+{
 	
 	LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
 	
@@ -46,7 +47,8 @@ void Timer_Girouette_Conf(int Arr, int Psc){
 
 //Récupération de l'angle alpha de la girouette
 
-int get_alpha(TIM_TypeDef * Timer){
+int get_alpha(TIM_TypeDef * Timer)
+{
 	return LL_TIM_GetCounter(Timer);
 }
 

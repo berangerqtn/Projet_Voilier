@@ -44,7 +44,7 @@ void bordage_conf_IO(void){
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_INPUT);
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
 	
-	//Configuration du Pin8 (sortie STM32 en PWM) en output floating
+	//Configuration du Pin8 (sortie STM32 en PWM) en output alternate
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_OUTPUT);
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_8,LL_GPIO_MODE_ALTERNATE);
 	
