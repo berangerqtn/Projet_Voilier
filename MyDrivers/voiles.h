@@ -21,5 +21,6 @@ float rapport_cyclique_to_comparevalue(float RC);
 //récupère la copmare value et l'utilise avec f° LL
 int voiles_compare(int compare);
 
+
 #endif
 

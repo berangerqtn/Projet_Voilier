@@ -9,5 +9,7 @@
 
 void bordage_conf_IO(void);
 void Bordage_Background(void);
+void bordage_border_voiles(int alpha);
+void bordage_lacher_voiles();
 
 #endif

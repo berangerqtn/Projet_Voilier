@@ -16,5 +16,13 @@ void Timer_Girouette_Conf(int Arr, int Psc);
 //Récupération de l'angle alpha de la girouette
 int get_alpha(TIM_TypeDef *Timer);
 
+//Gestion du zéro mécanique, qd repasse par zéro alors calibrage OK
+void girouette_IT_index(void);
+
+void girouette_IT_conf(void);
+
+//Redirection
+void EXTI9_5_IRQHandler(void);
+
 
 #endif

@@ -14,6 +14,7 @@
 #include "stm32f1xx_ll_tim.h" 
 #include "stm32f1xx_ll_rcc.h"
 
+float teta;
 
 void timer_voiles_conf(int Arr, int Psc)
 {
@@ -49,7 +50,6 @@ void timer_voiles_conf(int Arr, int Psc)
 //Conversion de ALPHA reçu du capteur en TETA pour les voiles
 float voiles_alpha_to_teta(int alpha)
 {
-	float teta;
 	
 	if (alpha>0 && alpha<45)
 	{
@@ -88,4 +88,5 @@ int voiles_compare(int compare)
 {
 	LL_TIM_OC_SetCompareCH1(TIM1, compare);
 }
+
 

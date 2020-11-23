@@ -72,5 +72,28 @@ int get_alpha(TIM_TypeDef * Timer)
 }
 
 
+//Gestion du zéro mécanique, qd repasse par zéro alors calibrage OK
+void girouette_IT_index(void){
+	
+    LL_GPIO_AF_SetEXTISource(LL_GPIO_AF_EXTI_PORTA, LL_GPIO_AF_EXTI_LINE5);
+
+    AFIO->EXTICR[2] |= AFIO_EXTICR2_EXTI5_PA;
+
+    EXTI->IMR |= EXTI_IMR_MR5_Msk;
+    EXTI->RTSR |= EXTI_RTSR_TR5_Msk;
+}
+
+void girouette_IT_conf(void){
+    NVIC->IP[23]=2<<4;
+    NVIC->ISER[0]=1<<23;
+}
+
+//redirection
+void EXTI9_5_IRQHandler(void){
+    //CNT A ZERO
+    LL_TIM_SetCounter(TIM3, 0);
+    //enlever le pin de pending ?
+    EXTI->PR |= EXTI_PR_PR5_Msk; 
+}
 
 

@@ -16,7 +16,7 @@
 #include "stm32f1xx_ll_bus.h"
 
 
-int alpha=90;
+int alpha;
 float teta;
 float MS;
 float Rapport_Cyclique;
@@ -33,14 +33,34 @@ void bordage_conf_IO(void)
 
 }
 
+void bordage_border_voiles(int alpha){
+	
+	teta=voiles_alpha_to_teta(alpha);
+	MS=voiles_teta_to_ms(teta);
+	Rapport_Cyclique=voiles_rapport_cyclique(MS);
+	compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
+  voiles_compare((int)compare_value);
+}
+
+void bordage_lacher_voiles(){
+	
+	MS=voiles_teta_to_ms(90);
+	Rapport_Cyclique=voiles_rapport_cyclique(MS);
+	compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
+  voiles_compare((int)compare_value);
+}
+
+
 
 void Bordage_Background(void){
 		
-		//alpha=get_alpha(TIM3);
-		teta=voiles_alpha_to_teta(alpha);
-		MS=voiles_teta_to_ms(teta);
-		Rapport_Cyclique=voiles_rapport_cyclique(MS);
-		compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
-	  voiles_compare((int)compare_value);
-		alpha+=10;
+	
+	//valeur 40 à modifier en fonction des tests en réel
+	while ((roulis_get(10)<40) && (roulis_get(11)<40)){
+		alpha=get_alpha(TIM3);
+		bordage_border_voiles(alpha);
+	}
+	
+	bordage_lacher_voiles();
+	
 }
