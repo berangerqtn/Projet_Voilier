@@ -7,3 +7,9 @@
 //_______________________COUCHES SERVICES________________________
 
 //    Fichier de programmation de l'affichage des informations
+
+#include "affichage.h"
+
+
+
+//void 
