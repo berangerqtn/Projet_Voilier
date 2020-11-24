@@ -47,20 +47,17 @@ int main(void)
 	orientation_init();
 	DATA_init();
   
-	while(LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_5)==0){
-			
-	}
-	LL_TIM_EnableCounter(TIM3);
-	
+	void set_index();
+		
   /* Infinite loop */
   while (1)
   {
 		
-		//gerer_orientation();
+		gerer_orientation();
 		
 		Bordage_Background(&info_roulis,&info_voiles,&batterie);
 		//Roulis : angles de roulis pas eu le temps de le faire
-		//affichage_background(info_roulis,info_voiles,batterie);
+		affichage_background(info_roulis,info_voiles,batterie);
 		
 		
   }

@@ -62,6 +62,11 @@ void Girouette_Conf(int Arr, int Psc)
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_5,LL_GPIO_MODE_FLOATING);
 	
 }
+void Enable_Counter(void)
+{
+	LL_TIM_EnableCounter(TIM3);
+}
+
 
 
 //Récupération de l'angle alpha de la girouette

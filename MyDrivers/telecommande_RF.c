@@ -79,11 +79,11 @@ void telecommandeRF_init()
 int telecommandeRF_getpwm()
 {
 	int Nbr_Pas_Etat_Haut;
-	int Nbr_Pas_Totaux;
+	//int Nbr_Pas_Totaux;
 	
 	
 	Nbr_Pas_Etat_Haut=(TIM4->CCR2); //On récupère pas la bonne info en réel? Pb d'init? les deux channels ne sont pas branchés sur TI1?
-	Nbr_Pas_Totaux=(TIM4->CCR1);
+	//Nbr_Pas_Totaux=(TIM4->CCR1);
 	
 	return Nbr_Pas_Etat_Haut; //Valeur min = 0.001* 72 000 000/Prescaler+1 =24000 et Valeur max = 0.002 * 72 000 000/Prescaler+1 =48 000
 	//On divise Nbr_Pas_Etat_Haut pas le nbr de pas totaux si besoin?

@@ -14,6 +14,7 @@
 
 
 void bordage_conf_IO(void);
+void set_index(void);
 void Bordage_Background(int *info_roulis, int *info_voiles, int*info_batterie);
 void bordage_border_voiles(int alpha, int* info_voiles);
 void bordage_lacher_voiles(int* info_voiles);

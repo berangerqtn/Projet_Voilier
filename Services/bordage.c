@@ -50,7 +50,15 @@ void bordage_lacher_voiles(int *info_voiles){
 }
 
 
-
+void set_index()
+{
+	while(LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_5)==0)
+	{
+			
+	}
+	Enable_Counter();
+	
+}
 void Bordage_Background(int *info_roulis, int *info_voiles, int*info_batterie){
 		
 	

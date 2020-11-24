@@ -13,6 +13,9 @@
 //Configuation du timer, en mode codeur incrémental
 void Girouette_Conf(int Arr, int Psc);
 
+//Se lance lorsque la girouette se set_up
+void Enable_Counter(void);
+
 //Récupération de l'angle alpha de la girouette
 int get_alpha(TIM_TypeDef *Timer);
 
