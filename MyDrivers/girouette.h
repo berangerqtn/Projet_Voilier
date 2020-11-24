@@ -21,8 +21,4 @@ int get_alpha(TIM_TypeDef *Timer);
 
 
 
-//Redirection
-void EXTI9_5_IRQHandler(void);
-
-
 #endif

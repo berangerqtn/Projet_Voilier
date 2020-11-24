@@ -8,6 +8,8 @@
 
 //   Fichier de driver du déploiement des voiles.
 
+//RESOLUTION DU SERVOMOTEUR : 20 Points
+
 #include "voiles.h"
 
 

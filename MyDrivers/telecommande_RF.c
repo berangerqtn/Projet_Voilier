@@ -8,6 +8,11 @@
 // 
 //               Fichier de driver du module RF.
 
+//RESOLUTION DU PWM RECU DE LA TELECOMMANDE : 12 000 
+//LE -20 vient de notre volonté de stabiliser autour de la valeur 
+//centrale, et ainsi ne pas avoir d'effet rebond lorsque la commande 
+//est positionnée au centre.
+
 #include "telecommande_RF.h"
 
 //Initialiser le timer sur lequel sera branché le module RF 
