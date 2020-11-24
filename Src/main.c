@@ -50,7 +50,7 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-		gerer_orientation();
+		//gerer_orientation();
 		Bordage_Background(&info_roulis,&info_voiles,&batterie);
 		//Roulis : angles de roulis 
 		affichage_background(info_roulis,info_voiles,batterie);

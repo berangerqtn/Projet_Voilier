@@ -52,14 +52,14 @@ void cap_send_to_moteur(int pulse)
 	TIM2->EGR = (1<<TIM_EGR_UG_Pos); 
 	//LL_TIM_GenerateEvent_UPDATE(TIM2)
 	
-	if (pulse<(36000-RESOLUTION)) //36000 correspond a notre 1.5 ms
+	if (pulse<(36000-RESOLUTION*10)) //36000 correspond a notre 1.5 ms
 	{
 		//Envoie du sens 
 	  LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_6); 
 		//Envoie de la vitesse 
 		cap_generate_pwm(abs(36000-pulse));
 	}
-	else if (pulse > (36000+RESOLUTION)) //
+	else if (pulse > (36000+RESOLUTION*10)) //
 	{
 		//Envoie du sens 
 		LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_6);
