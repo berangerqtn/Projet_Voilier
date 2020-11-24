@@ -55,13 +55,13 @@ void Bordage_Background(int *info_roulis, int *info_voiles, int*info_batterie){
 		
 	
 	//valeur 40 à modifier en fonction des tests en réel
-	while ((roulis_get(10)<40) && (roulis_get(11)<40)){
+	//while ((roulis_get(10)<40) && (roulis_get(11)<40)){
 		alpha=get_alpha(TIM3);
 		bordage_border_voiles(alpha,info_voiles);
 		*info_roulis=30;
-	}
+	//}
 	
-	bordage_lacher_voiles(info_voiles);
+	//bordage_lacher_voiles(info_voiles);
 	*info_roulis=50;
 	
 }

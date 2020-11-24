@@ -24,6 +24,8 @@ void voiles_conf(int Arr, int Psc)
 	//TIM1, PA8, attention mettre MOE (Master Output Enable) à 1
 	
 	LL_TIM_InitTypeDef My_LL_Tim_Init_Struct;
+	LL_TIM_OC_InitTypeDef My_LL_TIM_OC_InitStruct;
+	
 	//Validation de l'horloge
 	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_TIM1);
 	
@@ -36,11 +38,24 @@ void voiles_conf(int Arr, int Psc)
 	
 	LL_TIM_Init(TIM1,&My_LL_Tim_Init_Struct);
 	
+	
 	//MOE mis à 1
 	LL_TIM_EnableAllOutputs(TIM1);
 	
+	LL_TIM_OC_StructInit(&My_LL_TIM_OC_InitStruct);
+	
 	//TIM1 en sortie PWM
-	LL_TIM_OC_SetMode(TIM1,LL_TIM_CHANNEL_CH1, LL_TIM_OCMODE_PWM1);
+	My_LL_TIM_OC_InitStruct.CompareValue=00;
+	My_LL_TIM_OC_InitStruct.OCMode=LL_TIM_OCMODE_PWM1;
+	My_LL_TIM_OC_InitStruct.OCPolarity=LL_TIM_OCPOLARITY_HIGH;
+	My_LL_TIM_OC_InitStruct.OCState=LL_TIM_OCSTATE_ENABLE;
+	
+	LL_TIM_OC_Init(TIM1, LL_TIM_CHANNEL_CH1, &My_LL_TIM_OC_InitStruct);
+	
+	//LL_TIM_OC_SetMode(TIM1,LL_TIM_CHANNEL_CH1, LL_TIM_OCMODE_PWM1);
+	//LL_TIM_OCSTATE_ENABLE;
+	
+	LL_TIM_EnableCounter(TIM1);
 }
 
 
@@ -52,7 +67,7 @@ float voiles_alpha_to_teta(int alpha)
 	{
 		teta =0.0;
 	}
-	else if (alpha>=45 && alpha<180)
+	else if (alpha>=45 && alpha<=180)
 	{
 		teta= ((2.00/3.00)*(float)alpha)-30.00;
 	}
@@ -76,7 +91,9 @@ float voiles_rapport_cyclique (float MS)
 //conversion pour fixer CompareValue selon le rapport cyclique
 float rapport_cyclique_to_comparevalue(float RC)
 {
-	return(4.0*RC);
+	int origine = (4.0*RC);
+	
+	return (0.65*origine + 17);
 }
 
 

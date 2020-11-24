@@ -47,13 +47,20 @@ int main(void)
 	orientation_init();
 	DATA_init();
   
+	while(LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_5)==0){
+			
+	}
+	LL_TIM_EnableCounter(TIM3);
+	
   /* Infinite loop */
   while (1)
   {
+		
 		//gerer_orientation();
+		
 		Bordage_Background(&info_roulis,&info_voiles,&batterie);
 		//Roulis : angles de roulis 
-		affichage_background(info_roulis,info_voiles,batterie);
+		//affichage_background(info_roulis,info_voiles,batterie);
 		
 		
   }
@@ -88,7 +95,7 @@ void SystemClock_Config(void)
   /* Enable HSE oscillator */
 	// ********* Commenter la ligne ci-dessous pour MCBSTM32 *****************
 	// ********* Conserver la ligne si Nucléo*********************************
-  LL_RCC_HSE_EnableBypass();
+ // LL_RCC_HSE_EnableBypass();
   LL_RCC_HSE_Enable();
   while(LL_RCC_HSE_IsReady() != 1)
   {

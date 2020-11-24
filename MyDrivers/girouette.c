@@ -72,6 +72,8 @@ int get_alpha(TIM_TypeDef * Timer)
 }
 
 
+
+/*
 //Gestion du zéro mécanique, qd repasse par zéro alors calibrage OK
 void girouette_IT_index(void){
 	
@@ -83,9 +85,15 @@ void girouette_IT_index(void){
     EXTI->RTSR |= EXTI_RTSR_TR5_Msk;
 }
 
-void girouette_IT_conf(void){
-    NVIC->IP[23]=2<<4;
+void girouette_IT_conf(TIM_TypeDef *Timer){
+		
+		IRQn_Type TIM_irq;
+		TIM_irq=EXTI;
+		NVIC_SetPriority(TIM_irq,2);
+	
+    //NVIC->IP[23]=2<<4;
     NVIC->ISER[0]=1<<23;
+	
 }
 
 //redirection
@@ -95,5 +103,5 @@ void EXTI9_5_IRQHandler(void){
     //enlever le pin de pending ?
     EXTI->PR |= EXTI_PR_PR5_Msk; 
 }
-
+*/
 
