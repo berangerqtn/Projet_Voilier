@@ -39,6 +39,7 @@ void affichage_3sec(int tension, char* message)
 	int taux_tension=tension*100/tmax;
 	
 	sprintf(message,"Les voiles sont tendues à %d\n",taux_tension);
+	DATA_USART_send(message);
 	
 }
 

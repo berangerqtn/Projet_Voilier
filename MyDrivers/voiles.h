@@ -2,6 +2,10 @@
 #define VOILES_H
 
 #include "stm32f1xx_ll_gpio.h"
+#include "stm32f1xx_ll_gpio.h"
+#include "stm32f1xx_ll_bus.h" // Pour l'activation des horloges
+#include "stm32f1xx_ll_tim.h" 
+#include "stm32f1xx_ll_rcc.h"
 
 //Config du TIM1 en PWM output
 void voiles_conf(int Arr, int Psc);
@@ -19,7 +23,7 @@ float voiles_rapport_cyclique (float MS);
 float rapport_cyclique_to_comparevalue(float RC);
 
 //récupère la copmare value et l'utilise avec f° LL
-int voiles_compare(int compare);
+void voiles_compare(int compare);
 
 
 #endif

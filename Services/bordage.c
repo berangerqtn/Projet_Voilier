@@ -14,7 +14,7 @@
 
 
 int alpha;
-float teta;
+float teta1;
 float MS;
 float Rapport_Cyclique;
 int compare_value;
@@ -32,8 +32,8 @@ void bordage_conf_IO(void)
 
 void bordage_border_voiles(int alpha,int *info_voiles){
 	
-	teta=voiles_alpha_to_teta(alpha);
-	MS=voiles_teta_to_ms(teta);
+	teta1=voiles_alpha_to_teta(alpha);
+	MS=voiles_teta_to_ms(teta1);
 	Rapport_Cyclique=voiles_rapport_cyclique(MS);
 	compare_value=rapport_cyclique_to_comparevalue(Rapport_Cyclique);
   voiles_compare((int)compare_value);

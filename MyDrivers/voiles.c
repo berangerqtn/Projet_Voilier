@@ -9,10 +9,7 @@
 //   Fichier de driver du déploiement des voiles.
 
 #include "voiles.h"
-#include "stm32f1xx_ll_gpio.h"
-#include "stm32f1xx_ll_bus.h" // Pour l'activation des horloges
-#include "stm32f1xx_ll_tim.h" 
-#include "stm32f1xx_ll_rcc.h"
+
 
 float teta;
 
@@ -84,7 +81,7 @@ float rapport_cyclique_to_comparevalue(float RC)
 
 
 //récup le compare value et compare avec le signal
-int voiles_compare(int compare)
+void voiles_compare(int compare)
 {
 	LL_TIM_OC_SetCompareCH1(TIM1, compare);
 }

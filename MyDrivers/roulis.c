@@ -9,15 +9,6 @@
 //   Fichier de driver du roulis.
 
 #include "roulis.h"
-#include "stm32f1xx_ll_gpio.h"
-#include "stm32f1xx_ll_tim.h" 
-#include "stm32f1xx_ll_rcc.h"
-#include "stm32f1xx_ll_bus.h" // Pour l'activation des horloges
-#include "stm32f1xx_ll_adc.h"
-#include "stm32f1xx_ll_utils.h"
-#include "stdlib.h"
-#include "time.h"
-
 
 // IT quand dépassement du seuil
 // on reçoit une valeur analogique qu'on converti en numérique avec l'ADC
@@ -29,11 +20,13 @@ void ADC_init ()
 		
 		
 	//LL_ADC_InitTypeDef MyLL_ADC_TypeDef;
+	
+	
 
 	//ADC en mode injected discontinue 
 	LL_ADC_INJ_InitTypeDef MyLL_ADC_Injected;
 		
-	LL_ADC_INJ_StructInit (&MyLL_ADC_Injected);
+	LL_ADC_INJ_StructInit(&MyLL_ADC_Injected);
 	MyLL_ADC_Injected.SequencerDiscont=LL_ADC_INJ_SEQ_DISCONT_1RANK;  //On met les channels en discontinue? a vérifier
 	MyLL_ADC_Injected.SequencerLength=LL_ADC_INJ_SEQ_SCAN_ENABLE_2RANKS; //On a 2 channel dans notre groupe d'injected -> Vérifier qu'on est pas passé en mode scan
 			
@@ -64,7 +57,7 @@ int roulis_get(int num_channel)
 	
 	while (LL_ADC_IsActiveFlag_JEOS(ADC1)==0)
 	{
-		NULL;
+		
 	}
 	
 
