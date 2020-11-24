@@ -14,7 +14,7 @@
 
 
 float teta;
-
+	
 void voiles_conf(int Arr, int Psc)
 {
 	//Configuration du GPIOA pour la commande du ServoMoteur
