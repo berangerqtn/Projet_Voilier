@@ -48,8 +48,7 @@ void cap_init (int ARR, int PSC)
 	My_LL_Tim_OC_Struct.OCState=LL_TIM_OCSTATE_ENABLE;
 	TIM2->CCER|=(1<<4);
 	
-	
-	
+
 	LL_TIM_OC_Init(TIM1, LL_TIM_CHANNEL_CH1, &My_LL_Tim_OC_Struct);
 	
 	LL_TIM_OC_Init(TIM2, LL_TIM_CHANNEL_CH3, &My_LL_Tim_OC_Struct);
@@ -66,17 +65,17 @@ void cap_init (int ARR, int PSC)
 //RM008 p.318 explication pour envoyer le pwm
 void cap_send_to_moteur(int pulse)
 {
-	//TIM2->EGR = (1<<TIM_EGR_UG_Pos); 
+	//TIM2->EGR = (1<<TIM_EGR_UG_Pos); //Pour M.Rocacher : c'etait cette ligne qui forcait notre compeut a 0
 	//LL_TIM_GenerateEvent_UPDATE(TIM2)
 	
-	if (pulse<(36000-RESOLUTION)) //36000 correspond a notre 1.5 ms
+	if (pulse<(36000-RESOLUTION*10)) //36000 correspond a notre 1.5 ms + petite marge au niveau de "l'était neutre" de la télécommande
 	{
 		//Envoie du sens 
 	  LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_6); 
 		//Envoie de la vitesse 
 		cap_generate_pwm(abs(36000-pulse));
 	}
-	else if (pulse > (36000+RESOLUTION)) //
+	else if (pulse > (36000+RESOLUTION*10)) //
 	{
 		//Envoie du sens 
 		LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_6);
@@ -84,7 +83,7 @@ void cap_send_to_moteur(int pulse)
 		cap_generate_pwm(abs(36000-pulse));
 	}
 		
-	else //Si la télécommande est a son état 0, on arrete d'envoyer des signaux aux pins
+	else //Si la télécommande est a son état 0, on on envoie pas puissance au moteur
 	{
 		LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_6);
 	}
@@ -95,5 +94,5 @@ void cap_generate_pwm(int pulsation)
 {
 	int valeur_ccr = pulsation;
 	LL_TIM_OC_SetCompareCH2 (TIM2, valeur_ccr);
-	LL_TIM_EnableCounter(TIM2);
+	//LL_TIM_EnableCounter(TIM2);
 }

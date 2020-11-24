@@ -46,31 +46,25 @@ int main(void)
 	// Lancement chronomètre
 	//Chrono_Start(); 
 	
-<<<<<<< Updated upstream
-
-=======
-	//
 	//int info_roulis=0;
 	//int info_voiles=0;
 	//int batterie=100;
 	
   // Configuration des périphériques
-	bordage_conf_IO();
-	orientation_init();
-	DATA_init();
->>>>>>> Stashed changes
+	//bordage_conf_IO();
+	//orientation_init();
+	//DATA_init();
   
   /* Infinite loop */
   while (1)
   {
 		gerer_orientation();
-<<<<<<< Updated upstream
-=======
+
 		//Bordage_Background(&info_roulis,&info_voiles,&batterie);
 		//Roulis : angles de roulis 
 		//affichage_background(info_roulis,info_voiles,batterie);
 		
->>>>>>> Stashed changes
+
   }
 }
 

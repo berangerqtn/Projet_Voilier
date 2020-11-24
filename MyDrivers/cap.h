@@ -6,7 +6,7 @@
 #include "stm32f1xx_ll_tim.h"
 #include "stm32f1xx_ll_gpio.h"
 #define FREQ_HORLOGE 72000000
-#define RESOLUTION 23
+#define RESOLUTION 1
 
 void cap_init (int ARR, int PSC);
 void cap_generate_pwm(int pulsation);
