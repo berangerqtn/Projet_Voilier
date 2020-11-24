@@ -46,12 +46,31 @@ int main(void)
 	// Lancement chronomètre
 	//Chrono_Start(); 
 	
+<<<<<<< Updated upstream
 
+=======
+	//
+	//int info_roulis=0;
+	//int info_voiles=0;
+	//int batterie=100;
+	
+  // Configuration des périphériques
+	bordage_conf_IO();
+	orientation_init();
+	DATA_init();
+>>>>>>> Stashed changes
   
   /* Infinite loop */
   while (1)
   {
 		gerer_orientation();
+<<<<<<< Updated upstream
+=======
+		//Bordage_Background(&info_roulis,&info_voiles,&batterie);
+		//Roulis : angles de roulis 
+		//affichage_background(info_roulis,info_voiles,batterie);
+		
+>>>>>>> Stashed changes
   }
 }
 
@@ -84,7 +103,7 @@ void SystemClock_Config(void)
   /* Enable HSE oscillator */
 	// ********* Commenter la ligne ci-dessous pour MCBSTM32 *****************
 	// ********* Conserver la ligne si Nucléo*********************************
-  LL_RCC_HSE_EnableBypass();
+  //LL_RCC_HSE_EnableBypass();
   LL_RCC_HSE_Enable();
   while(LL_RCC_HSE_IsReady() != 1)
   {
