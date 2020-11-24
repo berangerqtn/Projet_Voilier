@@ -59,7 +59,7 @@ int main(void)
 		//gerer_orientation();
 		
 		Bordage_Background(&info_roulis,&info_voiles,&batterie);
-		//Roulis : angles de roulis 
+		//Roulis : angles de roulis pas eu le temps de le faire
 		//affichage_background(info_roulis,info_voiles,batterie);
 		
 		
