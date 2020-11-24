@@ -32,15 +32,32 @@ void telecommandeRF_init()
 	LL_TIM_Init(TIM4, &My_LL_Tim_Init_Struct);
 
 	LL_TIM_IC_InitTypeDef My_LL_Tim_IC_Struct; //On va mtn s'occuper des input channel	
-	LL_TIM_IC_StructInit(&My_LL_Tim_IC_Struct);
+	My_LL_Tim_IC_Struct.ICActiveInput=LL_TIM_ACTIVEINPUT_DIRECTTI;
+	My_LL_Tim_IC_Struct.ICPolarity=LL_TIM_IC_POLARITY_RISING;
+	My_LL_Tim_IC_Struct.ICFilter=LL_TIM_IC_FILTER_FDIV1;
+	My_LL_Tim_IC_Struct.ICPrescaler=LL_TIM_ICPSC_DIV1;
+	
 	LL_TIM_IC_Init(TIM4, LL_TIM_CHANNEL_CH2, &My_LL_Tim_IC_Struct);
+	LL_TIM_IC_Init(TIM4, LL_TIM_CHANNEL_CH1, &My_LL_Tim_IC_Struct);
 	
 //On va brancher sur TI1 et le STM récupère les infos dans les channel
 	LL_TIM_CC_EnableChannel(TIM4, LL_TIM_CHANNEL_CH1);
-	LL_TIM_IC_SetPolarity (TIM4, LL_TIM_CHANNEL_CH1, LL_TIM_IC_POLARITY_RISING); 
 	
 	LL_TIM_CC_EnableChannel(TIM4, LL_TIM_CHANNEL_CH2); //On va brancher sur T1 et le STM récupère les infos dans les channel
-	LL_TIM_IC_SetPolarity (TIM4, LL_TIM_CHANNEL_CH2, LL_TIM_IC_POLARITY_FALLING);
+	
+	//Ecriture du Bit CC1S dans le registre CCR1
+	LL_TIM_IC_SetActiveInput(TIM4,LL_TIM_CHANNEL_CH1,LL_TIM_ACTIVEINPUT_DIRECTTI);
+	
+	//write the CC2s Bits to 10  in the Timx_CCMR1 register (TI1 selected
+	LL_TIM_IC_SetActiveInput(TIM4,LL_TIM_CHANNEL_CH2,LL_TIM_ACTIVEINPUT_INDIRECTTI);
+	
+	LL_TIM_IC_SetPolarity(TIM4,LL_TIM_CHANNEL_CH2,LL_TIM_IC_POLARITY_FALLING);
+	
+	//Select(valid trigger input)
+	LL_TIM_SetTriggerInput(TIM4,LL_TIM_TS_TI1FP1);
+	
+	//configure the slave mode controler in reset mode
+	LL_TIM_SetSlaveMode(TIM4,LL_TIM_SLAVEMODE_RESET);
 	
 	LL_TIM_EnableCounter(TIM4);
 
@@ -52,19 +69,11 @@ int telecommandeRF_getpwm()
 {
 	int Nbr_Pas_Etat_Haut;
 	int Nbr_Pas_Totaux;
-		
-	//Ecriture du Bit CC1S dans le registre CCR1
-	TIM4->CCMR1=TIM_CCMR1_CC1S_0;
-	TIM4->CCER=(0<<TIM_CCER_CC1P_Pos);
-	TIM4->CCMR1=TIM_CCMR1_CC2S_1;
-	TIM4->CCER=(1<<TIM_CCER_CC2P_Pos);
-	TIM4->SMCR=(100<<TIM_SMCR_SMS_Pos);
-	TIM4->CCER=(1<<TIM_CCER_CC1E_Pos);
-	TIM4->CCER=(1<<TIM_CCER_CC2E_Pos);
 	
-	Nbr_Pas_Etat_Haut=(TIM4->CCR2);
+	
+	Nbr_Pas_Etat_Haut=(TIM4->CCR2); //On récupère pas la bonne info dans CCR2? Pb d'init, les deux channels ne sont pas branchés sur la meme voie?
 	Nbr_Pas_Totaux=(TIM4->CCR1);
 	
-	return Nbr_Pas_Etat_Haut; //Valeur min = 0.001* 72 000 000/Prescaler+1 =24000 et Valeur max = 0.001 * 72 000 000/Prescaler+1 =48 000
+	return Nbr_Pas_Etat_Haut; //Valeur min = 0.001* 72 000 000/Prescaler+1 =24000 et Valeur max = 0.002 * 72 000 000/Prescaler+1 =48 000
 	//On divise Nbr_Pas_Etat_Haut pas le nbr de pas totaux si besoin?
 }
