@@ -14,15 +14,13 @@
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
 
 
-//#include "Chrono.h"
-//#include "usart.h"
+
 #include "orientation.h"
 #include "bordage.h"
 #include "affichage.h"
 
 void  SystemClock_Config(void);
 
-/* Private functions ---------------------------------------------------------*/
 
 /**
   * @brief  Main program
